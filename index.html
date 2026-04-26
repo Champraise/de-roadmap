@@ -1,568 +1,949 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Data Engineering Career Roadmap</title>
-<style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 16px;
-    line-height: 1.7;
-    color: #1a1a2e;
-    background: #ffffff;
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 48px 40px;
-  }
-  h1 {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 2rem;
-    font-weight: 700;
-    color: #1A3C5E;
-    margin: 48px 0 8px;
-    border-bottom: 3px solid #1A3C5E;
-    padding-bottom: 8px;
-  }
-  h1:first-child { margin-top: 0; }
-  h2 {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #2E75B6;
-    margin: 32px 0 10px;
-  }
-  h3 {
-    font-family: Georgia, serif;
-    font-size: 1rem;
-    font-weight: 700;
-    color: #1A3C5E;
-    margin: 24px 0 8px;
-    font-style: italic;
-  }
-  p { margin: 10px 0; color: #333; }
-  ul { margin: 8px 0 8px 24px; }
-  li { margin: 5px 0; color: #333; }
-  li strong { color: #1A3C5E; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Engineering Career Roadmap</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg:       #0c0e10;
+      --surface:  #13181d;
+      --border:   #1e262f;
+      --accent:   #f5a623;
+      --accent2:  #3ecf8e;
+      --accent3:  #5c8aff;
+      --muted:    #4a5568;
+      --text:     #d4dbe4;
+      --text-dim: #7a8794;
+      --danger:   #ff6b6b;
+      --ph1:      #5c8aff;
+      --ph2:      #f5a623;
+      --ph3:      #3ecf8e;
+    }
 
-  /* Flow diagram */
-  .flow {
-    display: flex;
-    align-items: stretch;
-    gap: 0;
-    margin: 24px 0;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    overflow: hidden;
-  }
-  .flow-box {
-    flex: 1;
-    padding: 16px 14px;
-    text-align: center;
-  }
-  .flow-box .label {
-    font-family: 'Courier New', monospace;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-bottom: 4px;
-  }
-  .flow-box .sub { font-size: 0.8rem; opacity: 0.85; }
-  .flow-box .badge {
-    font-size: 0.7rem;
-    font-weight: 700;
-    margin-top: 6px;
-    letter-spacing: 0.04em;
-  }
-  .flow-arrow {
-    display: flex;
-    align-items: center;
-    padding: 0 6px;
-    color: #2E75B6;
-    font-size: 1.4rem;
-    font-weight: 700;
-    background: #f9f9f9;
-  }
-  .box-de   { background: #1A3C5E; color: #fff; }
-  .box-ml   { background: #2E75B6; color: #fff; }
-  .box-mlops{ background: #2e7d32; color: #fff; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  /* Phase header strip */
-  .phase-header {
-    background: #1A3C5E;
-    color: #fff;
-    padding: 12px 18px;
-    border-radius: 6px 6px 0 0;
-    font-family: 'Courier New', monospace;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    margin-top: 28px;
-  }
-  .phase-body {
-    border: 1px solid #c8d8e8;
-    border-top: none;
-    border-radius: 0 0 6px 6px;
-    padding: 18px 20px;
-    background: #f7fbff;
-    margin-bottom: 20px;
-  }
+    html { scroll-behavior: smooth; }
 
-  /* Project card */
-  .project-card {
-    border: 1px solid #d0dde8;
-    border-radius: 8px;
-    overflow: hidden;
-    margin: 18px 0;
-  }
-  .project-card-header {
-    background: #1A3C5E;
-    color: #fff;
-    padding: 12px 18px;
-    display: flex;
-    align-items: baseline;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-  .project-card-header .proj-id {
-    font-family: 'Courier New', monospace;
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: #a8d4f5;
-    letter-spacing: 0.06em;
-  }
-  .project-card-header .proj-title {
-    font-family: 'Courier New', monospace;
-    font-size: 1rem;
-    font-weight: 700;
-    color: #fff;
-  }
-  .badge-beginner     { background: #1b5e20; color: #a5d6a7; font-size: 0.72rem; font-weight: 700; padding: 2px 9px; border-radius: 20px; font-family: 'Courier New', monospace; letter-spacing: 0.04em; }
-  .badge-intermediate { background: #e65100; color: #ffe0b2; font-size: 0.72rem; font-weight: 700; padding: 2px 9px; border-radius: 20px; font-family: 'Courier New', monospace; letter-spacing: 0.04em; }
-  .badge-capstone     { background: #4a148c; color: #e1bee7; font-size: 0.72rem; font-weight: 700; padding: 2px 9px; border-radius: 20px; font-family: 'Courier New', monospace; letter-spacing: 0.04em; }
-  .project-card-body {
-    padding: 16px 18px;
-    background: #fff;
-  }
-  .project-row {
-    display: flex;
-    gap: 8px;
-    margin: 7px 0;
-    font-size: 0.92rem;
-    line-height: 1.55;
-  }
-  .project-row .row-label {
-    font-weight: 700;
-    color: #1A3C5E;
-    min-width: 120px;
-    flex-shrink: 0;
-    font-family: 'Courier New', monospace;
-    font-size: 0.82rem;
-  }
-  .project-row .row-val { color: #333; }
-  .project-row .row-val.source { color: #1155cc; }
-  .done-row {
-    margin-top: 12px;
-    padding: 10px 14px;
-    background: #e8f5e9;
-    border-left: 4px solid #2e7d32;
-    border-radius: 0 4px 4px 0;
-    font-size: 0.9rem;
-  }
-  .done-row strong { color: #1b5e20; font-family: 'Courier New', monospace; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Syne', sans-serif;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
 
-  /* Callout */
-  .callout {
-    background: #e8f0fe;
-    border-left: 5px solid #2E75B6;
-    padding: 14px 18px;
-    border-radius: 0 6px 6px 0;
-    margin: 16px 0;
-    font-size: 0.92rem;
-    color: #1A3C5E;
-    font-style: italic;
-  }
-  .callout-orange {
-    background: #fff3e0;
-    border-left: 5px solid #e65100;
-    color: #4e2200;
-  }
+    /* noise texture overlay */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.4;
+    }
 
-  /* Tables */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 16px 0;
-    font-size: 0.88rem;
-  }
-  th {
-    background: #1A3C5E;
-    color: #fff;
-    padding: 10px 12px;
-    text-align: left;
-    font-family: 'Courier New', monospace;
-    font-size: 0.78rem;
-    letter-spacing: 0.04em;
-    font-weight: 700;
-  }
-  td {
-    padding: 9px 12px;
-    border: 1px solid #dde4ed;
-    vertical-align: top;
-    line-height: 1.5;
-  }
-  tr:nth-child(even) td { background: #f4f8fc; }
-  tr:nth-child(odd) td { background: #fff; }
-  td:first-child { font-weight: 700; color: #1A3C5E; font-family: 'Courier New', monospace; font-size: 0.82rem; }
-  .phase-num { text-align: center; font-size: 1.1rem; }
-  .platform-cell { color: #e65100; font-weight: 700; }
+    .wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
 
-  /* Data sources section */
-  .source-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin: 14px 0;
-  }
-  .source-item {
-    border: 1px solid #dde4ed;
-    border-radius: 6px;
-    padding: 10px 14px;
-    background: #f7fbff;
-    font-size: 0.88rem;
-  }
-  .source-item strong {
-    font-family: 'Courier New', monospace;
-    color: #1A3C5E;
-    display: block;
-    margin-bottom: 2px;
-  }
-  .source-item a { color: #1155cc; font-size: 0.82rem; }
-  .source-item .desc { color: #555; font-size: 0.82rem; }
+    /* ── HEADER ── */
+    .hero {
+      margin-bottom: 56px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 40px;
+    }
 
-  /* Closing */
-  .closing {
-    text-align: center;
-    margin: 48px 0 24px;
-    padding: 28px;
-    border-top: 2px solid #1A3C5E;
-    border-bottom: 2px solid #1A3C5E;
-  }
-  .closing p:first-child {
-    font-family: 'Courier New', monospace;
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #1A3C5E;
-  }
-  .closing p:last-child {
-    color: #555;
-    font-style: italic;
-    margin-top: 6px;
-  }
+    .hero-tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .hero-tag::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
 
-  /* Skill checkpoint */
-  .checkpoint-table td:first-child {
-    background: #ebf3fb;
-    width: 35%;
-  }
+    h1 {
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin-bottom: 12px;
+    }
 
-  @media print { body { padding: 24px; } }
-</style>
+    .hero-sub {
+      font-size: 15px;
+      color: var(--text-dim);
+      margin-bottom: 28px;
+    }
+
+    .meta-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pill {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      padding: 5px 12px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-dim);
+    }
+    .pill.highlight {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(245,166,35,0.07);
+    }
+    .pill.warn {
+      border-color: var(--danger);
+      color: var(--danger);
+      background: rgba(255,107,107,0.07);
+    }
+    .pill.green {
+      border-color: var(--accent2);
+      color: var(--accent2);
+      background: rgba(62,207,142,0.07);
+    }
+
+    /* ── ALERT BANNER ── */
+    .alert {
+      background: rgba(245,166,35,0.08);
+      border: 1px solid rgba(245,166,35,0.3);
+      border-left: 3px solid var(--accent);
+      border-radius: 6px;
+      padding: 16px 20px;
+      margin-bottom: 48px;
+      font-size: 14px;
+      color: var(--text);
+    }
+    .alert strong { color: var(--accent); }
+    .alert p + p { margin-top: 6px; }
+
+    /* ── SECTION TITLES ── */
+    .section-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-label::before {
+      content: '';
+      width: 24px; height: 1px;
+      background: var(--muted);
+    }
+
+    /* ── ARCHITECTURE BLOCK ── */
+    .arch-grid {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1fr;
+      gap: 0;
+      margin-bottom: 56px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--surface);
+    }
+    .arch-cell {
+      padding: 24px 20px;
+      text-align: center;
+    }
+    .arch-cell.active {
+      background: rgba(92,138,255,0.08);
+      border-left: 2px solid var(--ph1);
+      border-right: 2px solid var(--ph1);
+    }
+    .arch-cell h3 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+    .arch-cell p { font-size: 12px; color: var(--text-dim); }
+    .arch-cell .badge {
+      display: inline-block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      padding: 2px 8px;
+      border-radius: 20px;
+      margin-top: 8px;
+      background: rgba(92,138,255,0.15);
+      color: var(--ph1);
+    }
+    .arch-arrow {
+      display: flex; align-items: center; justify-content: center;
+      padding: 0 8px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    /* ── PHASE BLOCKS ── */
+    .phase {
+      margin-bottom: 48px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      background: var(--surface);
+    }
+
+    .phase-header {
+      padding: 20px 28px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .phase-num {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      width: 36px; height: 36px;
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .ph1 .phase-num { background: rgba(92,138,255,0.15); color: var(--ph1); }
+    .ph2 .phase-num { background: rgba(245,166,35,0.15); color: var(--ph2); }
+    .ph3 .phase-num { background: rgba(62,207,142,0.15); color: var(--ph3); }
+
+    .phase-meta h2 {
+      font-size: 20px; font-weight: 700; color: #fff;
+      margin-bottom: 8px;
+    }
+    .phase-dates {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      color: var(--text-dim);
+      display: flex; flex-wrap: wrap; gap: 12px;
+    }
+    .ph1 .phase-dates span.d { color: var(--ph1); }
+    .ph2 .phase-dates span.d { color: var(--ph2); }
+    .ph3 .phase-dates span.d { color: var(--ph3); }
+
+    .phase-body { padding: 24px 28px; }
+
+    /* study list */
+    .study-list {
+      list-style: none;
+      margin-bottom: 24px;
+    }
+    .study-list li {
+      font-size: 14px;
+      color: var(--text);
+      padding: 7px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .study-list li:last-child { border-bottom: none; }
+    .study-list li::before {
+      content: '→';
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+
+    /* projects */
+    .projects-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .project-cards {
+      display: grid;
+      gap: 14px;
+    }
+
+    .project-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 18px 20px;
+      background: var(--bg);
+    }
+
+    .project-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .project-id {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      color: var(--muted);
+      flex-shrink: 0;
+    }
+
+    .project-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      flex: 1;
+    }
+
+    .project-badge {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+    .badge-beginner  { background: rgba(62,207,142,0.12); color: var(--accent2); }
+    .badge-intermediate { background: rgba(245,166,35,0.12); color: var(--accent); }
+    .badge-capstone  { background: rgba(92,138,255,0.12); color: var(--ph1); }
+
+    .project-row {
+      margin-bottom: 8px;
+      font-size: 13px;
+    }
+    .project-row strong {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .done-when {
+      margin-top: 12px;
+      border-top: 1px solid var(--border);
+      padding-top: 10px;
+      font-size: 12px;
+      color: var(--text-dim);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .done-when::before { content: '✓ '; color: var(--accent2); }
+
+    /* checkpoint */
+    .checkpoint {
+      margin-top: 20px;
+      border: 1px dashed var(--border);
+      border-radius: 6px;
+      padding: 14px 18px;
+      font-size: 13px;
+      color: var(--text-dim);
+      font-style: italic;
+    }
+    .ph1 .checkpoint { border-color: rgba(92,138,255,0.3); }
+    .ph2 .checkpoint { border-color: rgba(245,166,35,0.3); }
+    .ph3 .checkpoint { border-color: rgba(62,207,142,0.3); }
+
+    /* ── SKILL TABLE ── */
+    .skill-table-wrap { overflow-x: auto; margin-bottom: 56px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    thead tr {
+      border-bottom: 2px solid var(--border);
+    }
+    thead th {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 10px 16px;
+      text-align: left;
+    }
+    tbody tr {
+      border-bottom: 1px solid var(--border);
+    }
+    tbody tr:last-child { border-bottom: none; }
+    tbody td {
+      padding: 12px 16px;
+      color: var(--text);
+      vertical-align: top;
+    }
+    tbody td:first-child {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent2);
+      white-space: nowrap;
+    }
+
+    /* ── RESOURCES ── */
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px;
+      margin-bottom: 56px;
+    }
+
+    .resource-section-title {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 12px;
+      grid-column: 1 / -1;
+    }
+
+    .resource-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      background: var(--surface);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .resource-card h4 { font-size: 14px; font-weight: 700; color: #fff; }
+    .resource-card a {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      color: var(--accent3);
+      text-decoration: none;
+      word-break: break-all;
+    }
+    .resource-card a:hover { text-decoration: underline; }
+    .resource-card p { font-size: 12px; color: var(--text-dim); }
+
+    /* ── SUMMARY TABLE ── */
+    .summary-table-wrap {
+      margin-bottom: 56px;
+      overflow-x: auto;
+    }
+    .summary-table-wrap table thead th:first-child { width: 60px; }
+    .ph-tag {
+      display: inline-block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: 4px;
+    }
+    .ph-tag.p1 { background: rgba(92,138,255,0.15); color: var(--ph1); }
+    .ph-tag.p2 { background: rgba(245,166,35,0.15); color: var(--ph2); }
+    .ph-tag.p3 { background: rgba(62,207,142,0.15); color: var(--ph3); }
+
+    /* ── FREELANCE ── */
+    .freelance-block {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 28px;
+      background: var(--surface);
+      margin-bottom: 56px;
+    }
+    .freelance-block h2 {
+      font-size: 18px; font-weight: 700; color: #fff;
+      margin-bottom: 16px;
+    }
+    .freelance-block ul { list-style: none; }
+    .freelance-block ul li {
+      font-size: 14px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex; gap: 10px; align-items: flex-start;
+    }
+    .freelance-block ul li:last-child { border: none; }
+    .freelance-block ul li::before {
+      content: '◆';
+      font-size: 8px;
+      color: var(--accent);
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      text-align: center;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      padding-top: 32px;
+    }
+
+    /* ── TIMELINE BAR ── */
+    .timeline {
+      display: flex;
+      margin-bottom: 48px;
+      border-radius: 8px;
+      overflow: hidden;
+      height: 10px;
+      gap: 2px;
+    }
+    .tl-seg {
+      border-radius: 4px;
+    }
+    .tl-p1 { flex: 2; background: var(--ph1); }
+    .tl-p2 { flex: 3; background: var(--ph2); }
+    .tl-p3 { flex: 2; background: var(--ph3); }
+
+    /* responsive */
+    @media (max-width: 600px) {
+      .arch-grid { grid-template-columns: 1fr; }
+      .arch-arrow { display: none; }
+      .phase-header { flex-direction: column; gap: 12px; }
+    }
+  </style>
 </head>
 <body>
+<div class="wrapper">
 
-<!-- ══════════════════════ TITLE ══════════════════════ -->
-<h1 style="font-size:2.4rem; border-bottom: 4px solid #1A3C5E; text-align:center; padding-bottom:14px;">Data Engineering Career Roadmap</h1>
-<p style="text-align:center; font-style:italic; color:#2E75B6; font-size:1.05rem; margin-bottom:4px;">From Foundations to Freelance-Ready — With Real Projects</p>
-<p style="text-align:center; color:#888; font-size:0.9rem; margin-bottom:36px;">March 15, 2026 – June 13, 2026 &nbsp;·&nbsp; 6–10 hrs/week &nbsp;·&nbsp; 13 Weeks</p>
-
-<!-- ══════════════════════ HOW IT CONNECTS ══════════════════════ -->
-<h1>How It All Connects</h1>
-<p>You have touched every layer of the data stack already. Here is the map:</p>
-
-<div class="flow">
-  <div class="flow-box box-de">
-    <div class="label">Data Engineering</div>
-    <div class="sub">Pipelines · Storage · Transforms</div>
-    <div class="badge" style="color:#ffd700;">← YOUR FOCUS NOW</div>
-  </div>
-  <div class="flow-arrow">→</div>
-  <div class="flow-box box-ml">
-    <div class="label">ML / AI Models</div>
-    <div class="sub">Your 2020 dog breed classifier</div>
-    <div class="badge" style="color:#90ee90;">← ALREADY DONE</div>
-  </div>
-  <div class="flow-arrow">→</div>
-  <div class="flow-box box-mlops">
-    <div class="label">MLOps</div>
-    <div class="sub">Deploy · Monitor · Maintain</div>
-    <div class="badge" style="color:#ffd700;">← PHASE 4 GOAL</div>
-  </div>
-</div>
-
-<p>Data Engineering is the foundation. It is also the clearest path to remote and freelance work. Building it first sets you up for MLOps naturally — not as a detour, but as the next logical step.</p>
-
-<!-- ══════════════════════ PHASE 1 ══════════════════════ -->
-<h1>Phase 1 — Foundations</h1>
-<p><em style="color:#555;">March 15 – April 11, 2026 &nbsp;·&nbsp; Weeks 1–4 &nbsp;·&nbsp; Platform: DataCamp</em></p>
-<p>Stick to DataCamp only this phase. Build your base before you go wide. The goal is to feel comfortable writing Python and SQL from scratch without googling every line.</p>
-
-<h2>What to Study</h2>
-<ul>
-  <li>Python for Data Engineering track on DataCamp</li>
-  <li>SQL for Data Engineers — CTEs, window functions, aggregations, joins</li>
-  <li>Introduction to data types: CSV, JSON, APIs, databases</li>
-  <li>Basic file handling in Python: reading, writing, transforming</li>
-</ul>
-
-<h2>Phase 1 Projects</h2>
-<p><strong>Do them in order. They get harder. Each one maps to a real skill.</strong></p>
-
-<div class="project-card">
-  <div class="project-card-header">
-    <span class="proj-id">P1-A</span>
-    <span class="proj-title">CSV Cleaner</span>
-    <span class="badge-beginner">Beginner</span>
-  </div>
-  <div class="project-card-body">
-    <div class="project-row"><span class="row-label">What you build</span><span class="row-val">A Python script that reads a messy CSV file, cleans it (fix nulls, wrong types, duplicates) and outputs a clean version.</span></div>
-    <div class="project-row"><span class="row-label">Why it matters</span><span class="row-val">This is 80% of real DE work. Every pipeline starts with dirty data. If you can clean data reliably, you are already useful.</span></div>
-    <div class="project-row"><span class="row-label">Data source</span><span class="row-val source">Download any messy CSV from <strong>kaggle.com</strong> (search "dirty data" or "raw data"). Good options: Titanic dataset, World Happiness Report, or any government open data CSV.</span></div>
-    <div class="project-row"><span class="row-label">Tools</span><span class="row-val">Python (pandas), VS Code or Jupyter, CSV files</span></div>
-    <div class="done-row"><strong>✓ You are done when:</strong> You can open a CSV with unknown columns, spot at least 3 data quality issues, fix them in code, and save a clean output file.</div>
-  </div>
-</div>
-
-<div class="project-card">
-  <div class="project-card-header">
-    <span class="proj-id">P1-B</span>
-    <span class="proj-title">API to Database Loader</span>
-    <span class="badge-beginner">Beginner</span>
-  </div>
-  <div class="project-card-body">
-    <div class="project-row"><span class="row-label">What you build</span><span class="row-val">Call a public REST API, pull JSON data, and insert it into a local SQLite or PostgreSQL database using Python.</span></div>
-    <div class="project-row"><span class="row-label">Why it matters</span><span class="row-val">APIs are how real-world data enters pipelines. Databases are where it lives. This bridges those two things.</span></div>
-    <div class="project-row"><span class="row-label">Data source</span><span class="row-val source"><strong>Open-Meteo API</strong> (free, no key needed: open-meteo.com) — pull hourly weather for your city. Or <strong>OpenWeatherMap</strong> (openweathermap.org) free tier with API key.</span></div>
-    <div class="project-row"><span class="row-label">Tools</span><span class="row-val">Python (requests, sqlite3 or psycopg2), SQLite (built into Python) or PostgreSQL (free install)</span></div>
-    <div class="done-row"><strong>✓ You are done when:</strong> You can run your script, see new rows appear in the database, and query them with SQL to verify the data is correct.</div>
-  </div>
-</div>
-
-<div class="callout">Phase 1 Checkpoint: If you can do P1-A and P1-B without following a tutorial step-by-step, you are ready for Phase 2.</div>
-
-<!-- ══════════════════════ PHASE 2 ══════════════════════ -->
-<h1>Phase 2 — Core Data Engineering Skills</h1>
-<p><em style="color:#555;">April 12 – May 16, 2026 &nbsp;·&nbsp; Weeks 5–9 &nbsp;·&nbsp; Platform: O'Reilly (primary) + DataCamp</em></p>
-<p>This is where the real DE concepts land. Pipelines, orchestration, containerisation. Do not skip Docker — it trips up almost everyone and shows up everywhere.</p>
-
-<h2>What to Study</h2>
-<ul>
-  <li><strong>Fundamentals of Data Engineering</strong> — Joe Reis &amp; Matt Housley (O'Reilly book). Read Chapters 1–6 minimum. This gives you the mental model that makes everything else click.</li>
-  <li><strong>Data Pipelines Pocket Reference</strong> (O'Reilly book) — fast, practical, directly applicable</li>
-  <li>Apache Airflow basics — DAGs, tasks, scheduling, operators</li>
-  <li>Docker basics — images, containers, volumes, docker-compose</li>
-  <li>Cloud storage fundamentals — pick AWS S3 or Google Cloud Storage, understand buckets and object storage</li>
-</ul>
-
-<h2>Phase 2 Projects</h2>
-
-<div class="project-card">
-  <div class="project-card-header">
-    <span class="proj-id">P2-A</span>
-    <span class="proj-title">Scheduled Data Pipeline with Airflow</span>
-    <span class="badge-intermediate">Intermediate</span>
-  </div>
-  <div class="project-card-body">
-    <div class="project-row"><span class="row-label">What you build</span><span class="row-val">An Airflow DAG that runs on a schedule: pulls data from an API, transforms it (clean, filter, aggregate), and writes it to a database or CSV.</span></div>
-    <div class="project-row"><span class="row-label">Why it matters</span><span class="row-val">Orchestration is the core job of a Data Engineer. Knowing Airflow is on almost every DE job posting. This proves you can build something that runs automatically.</span></div>
-    <div class="project-row"><span class="row-label">Data source</span><span class="row-val source"><strong>Open-Meteo API</strong> (api.open-meteo.com, no key needed) for hourly weather. Or <strong>CoinGecko API</strong> (coingecko.com/en/api, free, no key) for crypto prices.</span></div>
-    <div class="project-row"><span class="row-label">Tools</span><span class="row-val">Apache Airflow (install via pip or Docker), Python, PostgreSQL or SQLite, Docker (recommended for Airflow setup)</span></div>
-    <div class="done-row"><strong>✓ You are done when:</strong> Your DAG runs on schedule without you doing anything. You can pause it, trigger it manually, and see task logs in the Airflow UI.</div>
-  </div>
-</div>
-
-<div class="project-card">
-  <div class="project-card-header">
-    <span class="proj-id">P2-B</span>
-    <span class="proj-title">Dockerised ETL Script</span>
-    <span class="badge-intermediate">Intermediate</span>
-  </div>
-  <div class="project-card-body">
-    <div class="project-row"><span class="row-label">What you build</span><span class="row-val">Take your P1-B API loader and package it inside a Docker container so it can run anywhere, not just on your machine.</span></div>
-    <div class="project-row"><span class="row-label">Why it matters</span><span class="row-val">Docker is the difference between a script that works on your laptop and one you can ship to a client. This is a fundamental career skill.</span></div>
-    <div class="project-row"><span class="row-label">Data source</span><span class="row-val source">Use the same API from P1-B. The data source does not change — the packaging does.</span></div>
-    <div class="project-row"><span class="row-label">Tools</span><span class="row-val">Docker Desktop (free), Python, your existing script from P1-B, a Dockerfile</span></div>
-    <div class="done-row"><strong>✓ You are done when:</strong> You can type "docker build" and "docker run" and your ETL runs inside a container. Someone else can run it on their machine with one command.</div>
-  </div>
-</div>
-
-<div class="project-card">
-  <div class="project-card-header">
-    <span class="proj-id">P2-C</span>
-    <span class="proj-title">Multi-Source Data Integration</span>
-    <span class="badge-intermediate">Intermediate</span>
-  </div>
-  <div class="project-card-body">
-    <div class="project-row"><span class="row-label">What you build</span><span class="row-val">Pull data from two different sources (e.g. an API and a CSV file), merge them on a common key, and load the result into one database table.</span></div>
-    <div class="project-row"><span class="row-label">Why it matters</span><span class="row-val">Real DE work almost always involves multiple sources. Joining them cleanly is a core skill clients will pay for.</span></div>
-    <div class="project-row"><span class="row-label">Data source</span><span class="row-val source"><strong>Source 1:</strong> World Bank Open Data API (api.worldbank.org) for country GDP or population. <strong>Source 2:</strong> Download a country metadata CSV from kaggle.com or data.world. Join on country code.</span></div>
-    <div class="project-row"><span class="row-label">Tools</span><span class="row-val">Python (pandas), requests, SQLite or PostgreSQL, Jupyter Notebook for exploration</span></div>
-    <div class="done-row"><strong>✓ You are done when:</strong> A single database table exists that has merged columns from both sources. You can query it with SQL and get sensible results.</div>
-  </div>
-</div>
-
-<div class="callout">Phase 2 Checkpoint: Can you explain what a DAG is, why Docker matters, and draw the flow of your P2-A pipeline on paper? If yes, you are Phase 3 ready.</div>
-
-<!-- ══════════════════════ PHASE 3 ══════════════════════ -->
-<h1>Phase 3 — Portfolio Project (Capstone)</h1>
-<p><em style="color:#555;">May 17 – June 13, 2026 &nbsp;·&nbsp; Weeks 10–13 &nbsp;·&nbsp; Platform: Both + GitHub + free tools</em></p>
-<p>This phase is the most important. One solid end-to-end project beats ten certificates. You are building the thing you point to when someone asks "what have you built?"</p>
-
-<div class="project-card">
-  <div class="project-card-header">
-    <span class="proj-id">P3 — CAPSTONE</span>
-    <span class="proj-title">Automated Pipeline with Dashboard</span>
-    <span class="badge-capstone">Capstone</span>
-  </div>
-  <div class="project-card-body">
-    <div class="project-row"><span class="row-label">What you build</span><span class="row-val">A complete, automated pipeline: ingest from a real public API daily, store in a database, run transformations to generate summary metrics, and expose a simple dashboard or report. Host the code on GitHub.</span></div>
-    <div class="project-row"><span class="row-label">Why it matters</span><span class="row-val">This demonstrates ingestion, storage, transformation, scheduling, and presentation — every layer of the stack. It is your proof of work for clients and employers.</span></div>
-    <div class="project-row">
-      <span class="row-label">Data source</span>
-      <span class="row-val source">
-        Pick <strong>one</strong> that interests you most:<br>
-        • Football/Soccer stats: <strong>api.football-data.org</strong> (free tier)<br>
-        • NASA open data: <strong>api.nasa.gov</strong> (free key at nasa.gov/open/data)<br>
-        • Nigerian economic data: <strong>dataportal.opendataforafrica.org</strong><br>
-        • Air quality data: <strong>openaq.org</strong> (free, no key needed)<br>
-        • Reddit trends: Reddit public API or pushshift.io
-      </span>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-tag">Data Engineering Career Roadmap</div>
+    <h1>From Foundations to<br/>Freelance-Ready</h1>
+    <p class="hero-sub">With Real Projects · Compressed 7-Week Schedule</p>
+    <div class="meta-pills">
+      <span class="pill highlight">April 27 – June 15, 2026</span>
+      <span class="pill warn">7 Weeks · O'Reilly Access Expires Jun 15</span>
+      <span class="pill">10–15 hrs/week</span>
+      <span class="pill green">3 Phases · 6 Projects</span>
     </div>
-    <div class="project-row"><span class="row-label">Tools</span><span class="row-val">Python, Apache Airflow (scheduler), PostgreSQL (storage), dbt or plain SQL (transforms), Streamlit or Metabase (free dashboard), Docker, GitHub</span></div>
-    <div class="done-row"><strong>✓ You are done when:</strong> A GitHub repo exists with a README explaining what it does. The pipeline runs daily without you touching it. A dashboard shows at least 3 meaningful metrics. Someone else can clone and run it.</div>
+  </header>
+
+  <!-- ALERT -->
+  <div class="alert">
+    <p><strong>⚡ Compressed Schedule Notice</strong> — This roadmap has been condensed from 13 weeks to 7 to fit your O'Reilly access window (expires June 15). You'll need to push to <strong>10–15 hours/week</strong> instead of the original 6–10. Phases 2 reading is O'Reilly-heavy — prioritise it early.</p>
+    <p>Phase 2's P2-C (Multi-Source Integration) is a stretch goal — skip it if time is tight and focus on getting the Capstone done.</p>
   </div>
-</div>
 
-<div class="callout callout-orange">This project is your CV. When you apply for freelance work or jobs, you send this GitHub link. Make the README clear enough that someone non-technical can understand what the project does and why.</div>
-
-<h2>Bonus Project (If You Have Time)</h2>
-
-<div class="project-card">
-  <div class="project-card-header">
-    <span class="proj-id">P3-BONUS</span>
-    <span class="proj-title">Data Quality Monitor</span>
-    <span class="badge-intermediate">Intermediate</span>
+  <!-- HOW IT CONNECTS -->
+  <div class="section-label">How It All Connects</div>
+  <div class="arch-grid">
+    <div class="arch-cell active">
+      <h3>Data Engineering</h3>
+      <p>Pipelines · Storage · Transforms</p>
+      <div class="badge">← YOUR FOCUS NOW</div>
+    </div>
+    <div class="arch-arrow">→</div>
+    <div class="arch-cell">
+      <h3>ML / AI Models</h3>
+      <p>Your 2020 dog breed classifier</p>
+      <p style="font-size:11px;color:var(--accent2);margin-top:6px;">← ALREADY DONE</p>
+    </div>
+    <div class="arch-arrow">→</div>
+    <div class="arch-cell">
+      <h3>MLOps</h3>
+      <p>Deploy · Monitor · Maintain</p>
+      <p style="font-size:11px;color:var(--ph2);margin-top:6px;">← PHASE 4 GOAL</p>
+    </div>
   </div>
-  <div class="project-card-body">
-    <div class="project-row"><span class="row-label">What you build</span><span class="row-val">Add automated data quality checks to your capstone pipeline. Alert you (email or log) when data looks wrong: missing values above a threshold, unexpected nulls, value ranges that seem off.</span></div>
-    <div class="project-row"><span class="row-label">Why it matters</span><span class="row-val">Data quality is one of the first things senior engineers ask about. Adding this makes your capstone look production-grade, not just a learning project.</span></div>
-    <div class="project-row"><span class="row-label">Data source</span><span class="row-val">Same data as your capstone. No new data source needed.</span></div>
-    <div class="project-row"><span class="row-label">Tools</span><span class="row-val">Great Expectations (Python library, free) or simple custom checks in Python. Notifications via smtplib (email) or a free Slack webhook.</span></div>
-    <div class="done-row"><strong>✓ You are done when:</strong> Your pipeline automatically detects and logs at least 2 data quality issues. You have a record of when checks passed and failed.</div>
+
+  <!-- TIMELINE VISUAL -->
+  <div class="section-label">7-Week Timeline</div>
+  <div class="timeline">
+    <div class="tl-seg tl-p1" title="Phase 1: Apr 27–May 10"></div>
+    <div class="tl-seg tl-p2" title="Phase 2: May 11–Jun 1"></div>
+    <div class="tl-seg tl-p3" title="Phase 3: Jun 2–Jun 15"></div>
   </div>
+
+  <!-- ──────────── PHASE 1 ──────────── -->
+  <div class="section-label">Phase 1</div>
+  <div class="phase ph1">
+    <div class="phase-header">
+      <div class="phase-num">P1</div>
+      <div class="phase-meta">
+        <h2>Foundations</h2>
+        <div class="phase-dates">
+          <span class="d">April 27 – May 10, 2026</span>
+          <span>·</span>
+          <span>Weeks 1–2</span>
+          <span>·</span>
+          <span>Platform: DataCamp</span>
+        </div>
+      </div>
+    </div>
+    <div class="phase-body">
+      <p style="font-size:14px;color:var(--text-dim);margin-bottom:18px;">Stick to DataCamp only this phase. Build your base before you go wide. Goal: write Python and SQL from scratch without googling every line.</p>
+
+      <ul class="study-list">
+        <li>Python for Data Engineering track on DataCamp</li>
+        <li>SQL for Data Engineers — CTEs, window functions, aggregations, joins</li>
+        <li>Introduction to data types: CSV, JSON, APIs, databases</li>
+        <li>Basic file handling in Python: reading, writing, transforming</li>
+      </ul>
+
+      <div class="projects-label">Phase 1 Projects — Do them in order. Each maps to a real skill.</div>
+      <div class="project-cards">
+
+        <div class="project-card">
+          <div class="project-top">
+            <span class="project-id">P1-A</span>
+            <span class="project-title">CSV Cleaner</span>
+            <span class="project-badge badge-beginner">Beginner</span>
+          </div>
+          <div class="project-row">
+            <strong>What you build</strong>
+            A Python script that reads a messy CSV file, cleans it (fix nulls, wrong types, duplicates) and outputs a clean version.
+          </div>
+          <div class="project-row">
+            <strong>Why it matters</strong>
+            This is 80% of real DE work. Every pipeline starts with dirty data. If you can clean data reliably, you are already useful.
+          </div>
+          <div class="project-row">
+            <strong>Data source</strong>
+            Download any messy CSV from <strong>kaggle.com</strong>. Good options: Titanic dataset, World Happiness Report, or any government open data CSV.
+          </div>
+          <div class="project-row">
+            <strong>Tools</strong>
+            Python (pandas), VS Code or Jupyter, CSV files
+          </div>
+          <div class="done-when">You can open a CSV with unknown columns, spot at least 3 data quality issues, fix them in code, and save a clean output file.</div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-top">
+            <span class="project-id">P1-B</span>
+            <span class="project-title">API to Database Loader</span>
+            <span class="project-badge badge-beginner">Beginner</span>
+          </div>
+          <div class="project-row">
+            <strong>What you build</strong>
+            Call a public REST API, pull JSON data, and insert it into a local SQLite or PostgreSQL database using Python.
+          </div>
+          <div class="project-row">
+            <strong>Why it matters</strong>
+            APIs are how real-world data enters pipelines. Databases are where it lives. This bridges those two things.
+          </div>
+          <div class="project-row">
+            <strong>Data source</strong>
+            <strong>Open-Meteo API</strong> (free, no key: open-meteo.com) — pull hourly weather for your city. Or <strong>OpenWeatherMap</strong> free tier.
+          </div>
+          <div class="project-row">
+            <strong>Tools</strong>
+            Python (requests, sqlite3 or psycopg2), SQLite or PostgreSQL
+          </div>
+          <div class="done-when">You can run your script, see new rows appear in the database, and query them with SQL to verify the data is correct.</div>
+        </div>
+
+      </div>
+
+      <div class="checkpoint">Phase 1 Checkpoint: If you can do P1-A and P1-B without following a tutorial step-by-step, you are ready for Phase 2.</div>
+    </div>
+  </div>
+
+  <!-- ──────────── PHASE 2 ──────────── -->
+  <div class="section-label">Phase 2</div>
+  <div class="phase ph2">
+    <div class="phase-header">
+      <div class="phase-num">P2</div>
+      <div class="phase-meta">
+        <h2>Core Data Engineering Skills</h2>
+        <div class="phase-dates">
+          <span class="d">May 11 – June 1, 2026</span>
+          <span>·</span>
+          <span>Weeks 3–5</span>
+          <span>·</span>
+          <span>Platform: O'Reilly (primary) + DataCamp</span>
+        </div>
+      </div>
+    </div>
+    <div class="phase-body">
+      <p style="font-size:14px;color:var(--text-dim);margin-bottom:18px;">This is where the real DE concepts land. Pipelines, orchestration, containerisation. Do not skip Docker — it trips up almost everyone and shows up everywhere. <strong style="color:var(--accent)">Your O'Reilly access is open — use it heavily in these 3 weeks.</strong></p>
+
+      <ul class="study-list">
+        <li><strong>Fundamentals of Data Engineering</strong> — Joe Reis &amp; Matt Housley (O'Reilly). Read Chapters 1–6 minimum.</li>
+        <li><strong>Data Pipelines Pocket Reference</strong> (O'Reilly) — fast, practical, directly applicable</li>
+        <li>Apache Airflow basics — DAGs, tasks, scheduling, operators</li>
+        <li>Docker basics — images, containers, volumes, docker-compose</li>
+        <li>Cloud storage fundamentals — AWS S3 or GCS, buckets, object storage</li>
+      </ul>
+
+      <div class="projects-label">Phase 2 Projects — P2-C is a stretch goal if time is tight.</div>
+      <div class="project-cards">
+
+        <div class="project-card">
+          <div class="project-top">
+            <span class="project-id">P2-A</span>
+            <span class="project-title">Scheduled Data Pipeline with Airflow</span>
+            <span class="project-badge badge-intermediate">Intermediate</span>
+          </div>
+          <div class="project-row">
+            <strong>What you build</strong>
+            An Airflow DAG that runs on a schedule: pulls data from an API, transforms it, and writes it to a database or CSV.
+          </div>
+          <div class="project-row">
+            <strong>Why it matters</strong>
+            Orchestration is the core job of a Data Engineer. Knowing Airflow is on almost every DE job posting.
+          </div>
+          <div class="project-row">
+            <strong>Data source</strong>
+            <strong>Open-Meteo API</strong> (api.open-meteo.com, no key) for hourly weather. Or <strong>CoinGecko API</strong> (free) for crypto prices.
+          </div>
+          <div class="project-row">
+            <strong>Tools</strong>
+            Apache Airflow (via pip or Docker), Python, PostgreSQL or SQLite, Docker
+          </div>
+          <div class="done-when">Your DAG runs on schedule without you doing anything. You can pause it, trigger it manually, and see task logs in the Airflow UI.</div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-top">
+            <span class="project-id">P2-B</span>
+            <span class="project-title">Dockerised ETL Script</span>
+            <span class="project-badge badge-intermediate">Intermediate</span>
+          </div>
+          <div class="project-row">
+            <strong>What you build</strong>
+            Take your P1-B API loader and package it inside a Docker container so it can run anywhere.
+          </div>
+          <div class="project-row">
+            <strong>Why it matters</strong>
+            Docker is the difference between a script that works on your laptop and one you can ship to a client.
+          </div>
+          <div class="project-row">
+            <strong>Data source</strong>
+            Same API from P1-B. The data source doesn't change — the packaging does.
+          </div>
+          <div class="project-row">
+            <strong>Tools</strong>
+            Docker Desktop (free), Python, your P1-B script, a Dockerfile
+          </div>
+          <div class="done-when">You can type "docker build" and "docker run" and your ETL runs inside a container. Someone else can run it on their machine with one command.</div>
+        </div>
+
+        <div class="project-card" style="border-style:dashed;opacity:0.8;">
+          <div class="project-top">
+            <span class="project-id">P2-C</span>
+            <span class="project-title">Multi-Source Data Integration</span>
+            <span class="project-badge badge-intermediate">Stretch Goal</span>
+          </div>
+          <div class="project-row">
+            <strong>What you build</strong>
+            Pull data from two different sources (API + CSV), merge on a common key, and load into one database table.
+          </div>
+          <div class="project-row">
+            <strong>Data source</strong>
+            <strong>Source 1:</strong> World Bank API (api.worldbank.org) for country GDP. <strong>Source 2:</strong> Country metadata CSV from kaggle.com. Join on country code.
+          </div>
+          <div class="project-row">
+            <strong>Tools</strong>
+            Python (pandas), requests, SQLite or PostgreSQL
+          </div>
+          <div class="done-when">A single database table exists with merged columns from both sources. You can query it with SQL and get sensible results.</div>
+        </div>
+
+      </div>
+
+      <div class="checkpoint">Phase 2 Checkpoint: Can you explain what a DAG is, why Docker matters, and draw the flow of your P2-A pipeline on paper?</div>
+    </div>
+  </div>
+
+  <!-- ──────────── PHASE 3 ──────────── -->
+  <div class="section-label">Phase 3</div>
+  <div class="phase ph3">
+    <div class="phase-header">
+      <div class="phase-num">P3</div>
+      <div class="phase-meta">
+        <h2>Portfolio Project (Capstone)</h2>
+        <div class="phase-dates">
+          <span class="d">June 2 – June 15, 2026</span>
+          <span>·</span>
+          <span>Weeks 6–7</span>
+          <span>·</span>
+          <span>Platform: Both + GitHub + free tools</span>
+        </div>
+      </div>
+    </div>
+    <div class="phase-body">
+      <p style="font-size:14px;color:var(--text-dim);margin-bottom:18px;">This phase is the most important. <strong style="color:#fff">One solid end-to-end project beats ten certificates.</strong> You are building the thing you point to when someone asks "what have you built?" Note: <strong style="color:var(--danger)">O'Reilly access ends June 15</strong> — finish your reading in Phases 1 &amp; 2.</p>
+
+      <div class="project-cards">
+
+        <div class="project-card" style="border-color:rgba(62,207,142,0.3);">
+          <div class="project-top">
+            <span class="project-id">P3</span>
+            <span class="project-title">Automated Pipeline with Dashboard</span>
+            <span class="project-badge badge-capstone">Capstone</span>
+          </div>
+          <div class="project-row">
+            <strong>What you build</strong>
+            A complete, automated pipeline: ingest from a real public API daily, store in a database, run transformations to generate summary metrics, and expose a simple dashboard or report. Host the code on GitHub.
+          </div>
+          <div class="project-row">
+            <strong>Why it matters</strong>
+            This demonstrates ingestion, storage, transformation, scheduling, and presentation — every layer of the stack. This is your proof of work for clients and employers.
+          </div>
+          <div class="project-row">
+            <strong>Pick one data source</strong>
+            Football/Soccer: api.football-data.org (free tier) · NASA: api.nasa.gov (free key) · Nigerian economic data: dataportal.opendataforafrica.org · Air quality: openaq.org (free, no key)
+          </div>
+          <div class="project-row">
+            <strong>Tools</strong>
+            Python, Apache Airflow (scheduler), PostgreSQL (storage), dbt or plain SQL (transforms), Streamlit or Metabase (dashboard), Docker, GitHub
+          </div>
+          <div class="done-when">A GitHub repo exists with a README. The pipeline runs daily without you touching it. A dashboard shows at least 3 meaningful metrics. Someone else can clone and run it.</div>
+        </div>
+
+        <div class="project-card" style="border-style:dashed;">
+          <div class="project-top">
+            <span class="project-id">P3-BONUS</span>
+            <span class="project-title">Data Quality Monitor</span>
+            <span class="project-badge badge-intermediate">If Time Allows</span>
+          </div>
+          <div class="project-row">
+            <strong>What you build</strong>
+            Add automated data quality checks to your capstone pipeline. Alert you (email or log) when data looks wrong: missing values above a threshold, unexpected nulls, value ranges that seem off.
+          </div>
+          <div class="project-row">
+            <strong>Tools</strong>
+            Great Expectations (Python library) or custom checks. Notifications via smtplib or a free Slack webhook.
+          </div>
+          <div class="done-when">Your pipeline automatically detects and logs at least 2 data quality issues. You have a record of when checks passed and failed.</div>
+        </div>
+
+      </div>
+
+      <div class="checkpoint">This project is your CV. When you apply for freelance work, send this GitHub link. Make the README clear enough for someone non-technical to understand.</div>
+    </div>
+  </div>
+
+  <!-- SKILL CHECKPOINTS -->
+  <div class="section-label">Skill Checkpoints</div>
+  <p style="font-size:14px;color:var(--text-dim);margin-bottom:20px;">Don't measure progress by how many videos you watched. Measure it by what you can do.</p>
+  <div class="skill-table-wrap" style="margin-bottom:56px;">
+    <table>
+      <thead>
+        <tr>
+          <th>Skill</th>
+          <th>You know it when you can…</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Python basics</td><td>Write a script from scratch that reads a file, loops through rows, and writes output — without googling the syntax</td></tr>
+        <tr><td>SQL</td><td>Write a query with a JOIN, a window function, and a CTE without help</td></tr>
+        <tr><td>APIs</td><td>Make a GET request in Python, parse the JSON response, and extract specific fields</td></tr>
+        <tr><td>Data cleaning</td><td>Open an unfamiliar dataset and find + fix at least 3 quality issues using code</td></tr>
+        <tr><td>Airflow</td><td>Create a DAG with 3 tasks where Task 2 only runs if Task 1 succeeds</td></tr>
+        <tr><td>Docker</td><td>Write a Dockerfile from scratch, build it, run it, and verify the output</td></tr>
+        <tr><td>Databases</td><td>Design a 3-table schema, write the CREATE TABLE statements, and insert data from Python</td></tr>
+        <tr><td>Pipelines</td><td>Explain the difference between batch and streaming pipelines to someone non-technical</td></tr>
+        <tr><td>Data modeling</td><td>Explain what a fact table and a dimension table are and give an example</td></tr>
+        <tr><td>GitHub</td><td>Push a project with a clean README that someone else could clone and run</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- RESOURCES -->
+  <div class="section-label">Free Data Sources — Bookmark These</div>
+
+  <div class="resource-grid">
+    <div class="resource-section-title">APIs (Real-Time / Fresh Data)</div>
+    <div class="resource-card"><h4>Open-Meteo</h4><a href="https://open-meteo.com">open-meteo.com</a><p>Weather data, no API key needed</p></div>
+    <div class="resource-card"><h4>CoinGecko</h4><a href="https://coingecko.com/en/api">coingecko.com/en/api</a><p>Crypto prices, free no-key tier</p></div>
+    <div class="resource-card"><h4>OpenWeatherMap</h4><a href="https://openweathermap.org/api">openweathermap.org/api</a><p>Weather, free tier with API key</p></div>
+    <div class="resource-card"><h4>NASA Open Data</h4><a href="https://api.nasa.gov">api.nasa.gov</a><p>Space, imagery, asteroids — free key</p></div>
+    <div class="resource-card"><h4>Football-Data.org</h4><a href="https://football-data.org">football-data.org</a><p>Football/soccer stats, free tier</p></div>
+    <div class="resource-card"><h4>OpenAQ</h4><a href="https://openaq.org">openaq.org</a><p>Global air quality, no key needed</p></div>
+    <div class="resource-card"><h4>World Bank API</h4><a href="https://api.worldbank.org">api.worldbank.org</a><p>Economic indicators, 200+ countries</p></div>
+    <div class="resource-card"><h4>REST Countries</h4><a href="https://restcountries.com">restcountries.com</a><p>Country metadata, no key needed</p></div>
+
+    <div class="resource-section-title" style="margin-top:12px;">Datasets (Files to Download)</div>
+    <div class="resource-card"><h4>Kaggle</h4><a href="https://kaggle.com/datasets">kaggle.com/datasets</a><p>Thousands of CSV/JSON datasets, free</p></div>
+    <div class="resource-card"><h4>Nigeria Open Data</h4><a href="https://data.gov.ng">data.gov.ng</a><p>Nigerian government datasets</p></div>
+    <div class="resource-card"><h4>Africa Open Data</h4><a href="https://dataportal.opendataforafrica.org">dataportal.opendataforafrica.org</a><p>Pan-African data portal</p></div>
+    <div class="resource-card"><h4>Our World in Data</h4><a href="https://ourworldindata.org">ourworldindata.org</a><p>Clean, downloadable global datasets</p></div>
+
+    <div class="resource-section-title" style="margin-top:12px;">Free Cloud Tiers</div>
+    <div class="resource-card"><h4>Supabase</h4><a href="https://supabase.com">supabase.com</a><p>Free PostgreSQL in the cloud</p></div>
+    <div class="resource-card"><h4>Railway</h4><a href="https://railway.app">railway.app</a><p>Free PostgreSQL + easy deploy</p></div>
+    <div class="resource-card"><h4>Google Cloud</h4><a href="https://cloud.google.com">cloud.google.com</a><p>$300 free credit + free BigQuery tier</p></div>
+    <div class="resource-card"><h4>AWS Free Tier</h4><a href="https://aws.amazon.com/free">aws.amazon.com/free</a><p>S3, Lambda, RDS limited free use</p></div>
+  </div>
+
+  <!-- SUMMARY TABLE -->
+  <div class="section-label">7-Week Summary at a Glance</div>
+  <div class="summary-table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Phase</th>
+          <th>Dates</th>
+          <th>Weeks</th>
+          <th>Platform</th>
+          <th>Projects</th>
+          <th>You'll be able to…</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="ph-tag p1">1</span></td>
+          <td>Apr 27 – May 10</td>
+          <td>1–2</td>
+          <td>DataCamp</td>
+          <td>P1-A, P1-B</td>
+          <td>Clean data, call APIs, write to databases</td>
+        </tr>
+        <tr>
+          <td><span class="ph-tag p2">2</span></td>
+          <td>May 11 – Jun 1</td>
+          <td>3–5</td>
+          <td>O'Reilly + DataCamp</td>
+          <td>P2-A, P2-B, P2-C*</td>
+          <td>Build pipelines, containerise scripts, merge sources</td>
+        </tr>
+        <tr>
+          <td><span class="ph-tag p3">3</span></td>
+          <td>Jun 2 – Jun 15</td>
+          <td>6–7</td>
+          <td>Both + GitHub</td>
+          <td>P3 Capstone</td>
+          <td>Ship a production-grade pipeline with a live dashboard</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:12px;color:var(--muted);margin-top:10px;font-family:'IBM Plex Mono',monospace;">* P2-C is a stretch goal — skip if needed to protect the Capstone deadline.</p>
+  </div>
+
+  <!-- FREELANCE -->
+  <div class="section-label">Freelance Entry Strategy — After June 15</div>
+  <div class="freelance-block">
+    <h2>Once Your Capstone Is on GitHub</h2>
+    <ul>
+      <li>Search Upwork / Toptal for "ETL pipeline", "data migration", "data cleaning", "Airflow developer"</li>
+      <li>Small businesses need someone to move spreadsheet chaos into a real database — that is your first gig</li>
+      <li>Lead with your GitHub link in every application or pitch</li>
+      <li>Your 2020 image classifier is a bonus — pitch yourself as "a DE who knows what ML teams need from data"</li>
+      <li>After 2–3 small contracts, start applying to MLOps-adjacent roles where DE skills are required</li>
+    </ul>
+  </div>
+
+  <p style="text-align:center;font-size:15px;color:var(--text-dim);margin-bottom:48px;font-style:italic;">
+    The goal is not to learn everything. It is to build something real.<br/>
+    <strong style="color:#fff">Every project above is a brick. By June 15, you will have a house.</strong>
+  </p>
+
+  <div class="footer">
+    <p>Updated April 27, 2026 · 7-Week Compressed Schedule · O'Reilly Access Expires June 15</p>
+  </div>
+
 </div>
-
-<!-- ══════════════════════ SKILL CHECKPOINTS ══════════════════════ -->
-<h1>Skill Checkpoints — How to Know You're Really Learning</h1>
-<p>Do not measure progress by how many videos you watched. Measure it by what you can do.</p>
-
-<table class="checkpoint-table">
-  <tr><th style="width:35%">Skill</th><th>You know it when you can…</th></tr>
-  <tr><td>Python basics</td><td>Write a script from scratch that reads a file, loops through rows, and writes output — without googling the syntax</td></tr>
-  <tr><td>SQL</td><td>Write a query with a JOIN, a window function, and a CTE without help</td></tr>
-  <tr><td>APIs</td><td>Make a GET request in Python, parse the JSON response, and extract specific fields</td></tr>
-  <tr><td>Data cleaning</td><td>Open an unfamiliar dataset and find + fix at least 3 quality issues using code</td></tr>
-  <tr><td>Airflow</td><td>Create a DAG with 3 tasks where Task 2 only runs if Task 1 succeeds</td></tr>
-  <tr><td>Docker</td><td>Write a Dockerfile from scratch, build it, run it, and verify the output</td></tr>
-  <tr><td>Databases</td><td>Design a 3-table schema, write the CREATE TABLE statements, and insert data from Python</td></tr>
-  <tr><td>Pipelines</td><td>Explain the difference between batch and streaming pipelines to someone non-technical</td></tr>
-  <tr><td>Data modeling</td><td>Explain what a fact table and a dimension table are and give an example</td></tr>
-  <tr><td>GitHub</td><td>Push a project with a clean README that someone else could clone and run</td></tr>
-</table>
-
-<!-- ══════════════════════ FREE DATA SOURCES ══════════════════════ -->
-<h1>Free Data Sources — Bookmark This</h1>
-<p>All free, public, and reliable. No excuses for "I couldn't find data."</p>
-
-<h2>APIs (Real-Time / Fresh Data)</h2>
-<div class="source-grid">
-  <div class="source-item"><strong>Open-Meteo</strong><a href="https://open-meteo.com">open-meteo.com</a><div class="desc">Weather data, no API key needed</div></div>
-  <div class="source-item"><strong>CoinGecko</strong><a href="https://coingecko.com/en/api">coingecko.com/en/api</a><div class="desc">Crypto prices, free no-key tier</div></div>
-  <div class="source-item"><strong>OpenWeatherMap</strong><a href="https://openweathermap.org/api">openweathermap.org/api</a><div class="desc">Weather, free tier with API key</div></div>
-  <div class="source-item"><strong>NASA Open Data</strong><a href="https://api.nasa.gov">api.nasa.gov</a><div class="desc">Space, imagery, asteroids — free key</div></div>
-  <div class="source-item"><strong>Football-Data.org</strong><a href="https://football-data.org">football-data.org</a><div class="desc">Football/soccer stats, free tier</div></div>
-  <div class="source-item"><strong>OpenAQ</strong><a href="https://openaq.org">openaq.org</a><div class="desc">Global air quality, no key needed</div></div>
-  <div class="source-item"><strong>World Bank API</strong><a href="https://api.worldbank.org">api.worldbank.org</a><div class="desc">Economic indicators, 200+ countries</div></div>
-  <div class="source-item"><strong>REST Countries</strong><a href="https://restcountries.com">restcountries.com</a><div class="desc">Country metadata, no key needed</div></div>
-</div>
-
-<h2>Datasets (Files to Download)</h2>
-<div class="source-grid">
-  <div class="source-item"><strong>Kaggle</strong><a href="https://kaggle.com/datasets">kaggle.com/datasets</a><div class="desc">Thousands of CSV/JSON datasets, free</div></div>
-  <div class="source-item"><strong>Nigeria Open Data</strong><a href="https://data.gov.ng">data.gov.ng</a><div class="desc">Nigerian government datasets</div></div>
-  <div class="source-item"><strong>Africa Open Data</strong><a href="https://dataportal.opendataforafrica.org">dataportal.opendataforafrica.org</a><div class="desc">Pan-African data portal</div></div>
-  <div class="source-item"><strong>Our World in Data</strong><a href="https://ourworldindata.org">ourworldindata.org</a><div class="desc">Clean, downloadable global datasets</div></div>
-</div>
-
-<h2>Free Cloud Tiers</h2>
-<div class="source-grid">
-  <div class="source-item"><strong>Supabase</strong><a href="https://supabase.com">supabase.com</a><div class="desc">Free PostgreSQL database in the cloud</div></div>
-  <div class="source-item"><strong>Railway</strong><a href="https://railway.app">railway.app</a><div class="desc">Free PostgreSQL + easy pipeline deploy</div></div>
-  <div class="source-item"><strong>Google Cloud</strong><a href="https://cloud.google.com">cloud.google.com</a><div class="desc">$300 free credit + free tier BigQuery</div></div>
-  <div class="source-item"><strong>AWS Free Tier</strong><a href="https://aws.amazon.com/free">aws.amazon.com/free</a><div class="desc">S3, Lambda, RDS limited free use</div></div>
-</div>
-
-<!-- ══════════════════════ SUMMARY TABLE ══════════════════════ -->
-<h1>13-Week Summary at a Glance</h1>
-<table>
-  <tr>
-    <th style="width:8%">Phase</th>
-    <th style="width:22%">Dates</th>
-    <th style="width:18%">Platform</th>
-    <th style="width:18%">Projects</th>
-    <th>You'll be able to…</th>
-  </tr>
-  <tr>
-    <td class="phase-num">1</td>
-    <td>Mar 15 – Apr 11</td>
-    <td class="platform-cell">DataCamp</td>
-    <td>P1-A, P1-B</td>
-    <td>Clean data, call APIs, write to databases</td>
-  </tr>
-  <tr>
-    <td class="phase-num">2</td>
-    <td>Apr 12 – May 16</td>
-    <td class="platform-cell">O'Reilly</td>
-    <td>P2-A, P2-B, P2-C</td>
-    <td>Build pipelines, containerise scripts, merge sources</td>
-  </tr>
-  <tr>
-    <td class="phase-num">3</td>
-    <td>May 17 – Jun 13</td>
-    <td class="platform-cell">Both + GitHub</td>
-    <td>P3 Capstone</td>
-    <td>Ship a production-grade pipeline with a live dashboard</td>
-  </tr>
-</table>
-
-<!-- ══════════════════════ FREELANCE ══════════════════════ -->
-<h1>Freelance Entry Strategy — After June 13</h1>
-<p>Once your capstone is on GitHub, here is the realistic path to first paid work:</p>
-<ul>
-  <li><strong>Upwork / Toptal:</strong> Search for "ETL pipeline", "data migration", "data cleaning", "Airflow developer"</li>
-  <li>Small businesses need someone to move spreadsheet chaos into a real database — that is your first gig</li>
-  <li>Lead with your GitHub link in every application or pitch</li>
-  <li>Your 2020 image classifier is a bonus — pitch yourself as "a DE who knows what ML teams need from data"</li>
-  <li>After 2–3 small contracts, start applying to MLOps-adjacent roles where DE skills are required</li>
-</ul>
-
-<!-- ══════════════════════ CLOSING ══════════════════════ -->
-<div class="closing">
-  <p>The goal is not to learn everything. It is to build something real.</p>
-  <p>Every project above is a brick. By June 13, you will have a house.</p>
-</div>
-
 </body>
 </html>
