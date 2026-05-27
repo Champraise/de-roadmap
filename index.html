@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Data Engineering Expedition — June to September 2026</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,400&family=Fira+Code:wght@400;500;600&family=Lora:wght@400;500;600&display=swap" rel="stylesheet" />
 
@@ -615,15 +616,39 @@
       display: flex;
       gap: 12px;
       align-items: flex-start;
+      cursor: pointer;
+      transition: border-color .15s, background .15s;
     }
-    .check-box {
+    .check-item:hover { border-color: var(--p4); background: var(--p4-bg); }
+    .check-item.done  { border-color: var(--p3); background: var(--p3-bg); }
+    .check-item input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
       width: 18px; height: 18px;
       border: 2px solid var(--border);
       border-radius: 4px;
       flex-shrink: 0;
       margin-top: 2px;
+      cursor: pointer;
+      transition: background .15s, border-color .15s;
+      position: relative;
     }
-    .check-text { font-size: 13px; color: var(--text); }
+    .check-item input[type="checkbox"]:checked {
+      background: var(--p3);
+      border-color: var(--p3);
+    }
+    .check-item input[type="checkbox"]:checked::after {
+      content: '';
+      position: absolute;
+      left: 3px; top: 0px;
+      width: 5px; height: 9px;
+      border: 2px solid #000;
+      border-top: none;
+      border-left: none;
+      transform: rotate(45deg);
+    }
+    .check-item.done .check-text { color: var(--text-dim); text-decoration: line-through; }
+    .check-text { font-size: 13px; color: var(--text); transition: color .15s; }
 
     /* ─── FOOTER ─── */
     .footer {
@@ -1476,18 +1501,18 @@
   <div class="micro-line"><span class="micro">October Readiness Checklist</span></div>
   <p style="font-size:14px;color:var(--text-dim);margin-bottom:20px;">Tick these off before October 1. If 10/12 are checked, you are ready.</p>
   <div class="checklist">
-    <div class="check-item"><div class="check-box"></div><div class="check-text">GitHub has at least 4 public repositories with READMEs</div></div>
-    <div class="check-item"><div class="check-box"></div><div class="check-text">Can process any CSV file with polars in under 2 minutes</div></div>
-    <div class="check-item"><div class="check-box"></div><div class="check-text">Have a reusable EDA notebook template ready to deploy</div></div>
-    <div class="check-item"><div class="check-box"></div><div class="check-text">Have a reusable feature engineering pipeline (P3-B)</div></div>
-    <div class="check-item"><div class="check-box"></div><div class="check-text">BigQuery account is set up and tested</div></div>
-    <div class="check-item"><div class="check-box"></div><div class="check-text">Docker installed and familiar enough to not lose time on it</div></div>
-    <div class="check-item"><div class="check-box"></div><div class="check-text">Completed the 48-hour sprint simulation (P4-C)</div></div>
-    <div class="check-item"><div class="check-box"></div><div class="check-text">Capstone project is live, documented, and shareable</div></div>
-    <div class="check-item"><div class="check-box"></div><div class="check-text">Can explain the difference between batch and streaming confidently</div></div>
-    <div class="check-item"><div class="check-box"></div><div class="check-text">Have entered at least one Kaggle competition</div></div>
-    <div class="check-item"><div class="check-box"></div><div class="check-text">Can describe what "data leakage" is without googling it</div></div>
-    <div class="check-item"><div class="check-box"></div><div class="check-text">Have read at least 5 Kaggle winning solution writeups</div></div>
+    <label class="check-item"><input type="checkbox" data-key="ck0"><span class="check-text">GitHub has at least 4 public repositories with READMEs</span></label>
+    <label class="check-item"><input type="checkbox" data-key="ck1"><span class="check-text">Can process any CSV file with polars in under 2 minutes</span></label>
+    <label class="check-item"><input type="checkbox" data-key="ck2"><span class="check-text">Have a reusable EDA notebook template ready to deploy</span></label>
+    <label class="check-item"><input type="checkbox" data-key="ck3"><span class="check-text">Have a reusable feature engineering pipeline (P3-B)</span></label>
+    <label class="check-item"><input type="checkbox" data-key="ck4"><span class="check-text">BigQuery account is set up and tested</span></label>
+    <label class="check-item"><input type="checkbox" data-key="ck5"><span class="check-text">Docker installed and familiar enough to not lose time on it</span></label>
+    <label class="check-item"><input type="checkbox" data-key="ck6"><span class="check-text">Completed the 48-hour sprint simulation (P4-C)</span></label>
+    <label class="check-item"><input type="checkbox" data-key="ck7"><span class="check-text">Capstone project is live, documented, and shareable</span></label>
+    <label class="check-item"><input type="checkbox" data-key="ck8"><span class="check-text">Can explain the difference between batch and streaming confidently</span></label>
+    <label class="check-item"><input type="checkbox" data-key="ck9"><span class="check-text">Have entered at least one Kaggle competition</span></label>
+    <label class="check-item"><input type="checkbox" data-key="ck10"><span class="check-text">Can describe what "data leakage" is without googling it</span></label>
+    <label class="check-item"><input type="checkbox" data-key="ck11"><span class="check-text">Have read at least 5 Kaggle winning solution writeups</span></label>
   </div>
 
   <!-- ═══ SUMMARY ═══ -->
@@ -1549,5 +1574,23 @@
   </footer>
 
 </div>
+
+<script>
+  // Save and restore checkbox state across visits
+  const boxes = document.querySelectorAll('.checklist input[type="checkbox"]');
+
+  boxes.forEach(cb => {
+    const key = 'deroadmap_' + cb.dataset.key;
+    if (localStorage.getItem(key) === 'true') {
+      cb.checked = true;
+      cb.closest('label').classList.add('done');
+    }
+    cb.addEventListener('change', () => {
+      localStorage.setItem(key, cb.checked);
+      cb.closest('label').classList.toggle('done', cb.checked);
+    });
+  });
+</script>
+
 </body>
 </html>
