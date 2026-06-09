@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>The Road to MLOps & Data Engineering</title>
+<title>The Road to Data Engineering</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛤️</text></svg>"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Roboto:wght@400;500&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet"/>
@@ -26,8 +26,6 @@
   --p2: #EA4335; --p2-bg: #FCE8E6; --p2-dark: #B31412;
   --p3: #F9AB00; --p3-bg: #FEF7E0; --p3-dark: #7A5000;
   --p4: #34A853; --p4-bg: #E6F4EA; --p4-dark: #1E7A3D;
-  --p5: #FF6D00; --p5-bg: #FFF3E0; --p5-dark: #B74000;
-  --p6: #8430CE; --p6-bg: #F3E8FD; --p6-dark: #5B12A0;
   
   --shadow: 0 1px 3px rgba(60,64,67,.12), 0 1px 2px rgba(60,64,67,.08);
   --shadow-md: 0 4px 16px rgba(60,64,67,.14);
@@ -47,8 +45,6 @@
   --p2-bg: rgba(234, 67, 53, 0.15);  --p2-dark: #F28B82;
   --p3-bg: rgba(249, 171, 0, 0.15);  --p3-dark: #FDD663;
   --p4-bg: rgba(52, 168, 83, 0.15);  --p4-dark: #81C995;
-  --p5-bg: rgba(255, 109, 0, 0.15);  --p5-dark: #FCAD70;
-  --p6-bg: rgba(132, 48, 206, 0.15); --p6-dark: #C58AF9;
 
   --shadow: 0 1px 3px rgba(0,0,0,.5), 0 1px 2px rgba(0,0,0,.3);
   --shadow-md: 0 4px 16px rgba(0,0,0,.6);
@@ -134,7 +130,6 @@ input:checked + .slider:before {
 .stat:nth-child(2) .stat-v{color:var(--g-red)}
 .stat:nth-child(3) .stat-v{color:var(--g-yellow)}
 .stat:nth-child(4) .stat-v{color:var(--g-green)}
-.stat:nth-child(5) .stat-v{color:var(--p5)}
 .stat-l{font-family:'Roboto Mono',monospace;font-size:10px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.08em}
 
 /* ── INFO CARDS ── */
@@ -151,21 +146,20 @@ input:checked + .slider:before {
 .sec-label::after{content:'';flex:1;height:1px;background:var(--border); transition: background 0.3s;}
 
 /* ── ARC TIMELINE ── */
-.arc{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:48px}
+.arc{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:48px}
 .arc-seg{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 14px;position:relative;overflow:hidden;box-shadow:var(--shadow);transition:transform .15s,box-shadow .15s, background 0.3s, border 0.3s}
 .arc-seg:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
 .arc-seg::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
 .as1::before{background:var(--p1)} .as2::before{background:var(--p2)}
 .as3::before{background:var(--p3)} .as4::before{background:var(--p4)}
-.as5::before{background:var(--p5)} .as6::before{background:var(--p6)}
 .arc-num{font-family:'Roboto Mono',monospace;font-size:10px;font-weight:500;margin-bottom:6px}
 .as1 .arc-num{color:var(--p1)} .as2 .arc-num{color:var(--p2)} .as3 .arc-num{color:var(--p3)}
-.as4 .arc-num{color:var(--p4)} .as5 .arc-num{color:var(--p5)} .as6 .arc-num{color:var(--p6)}
+.as4 .arc-num{color:var(--p4)}
 .arc-seg h4{font-family:'Nunito',sans-serif;font-size:14px;font-weight:800;color:var(--text);margin-bottom:4px}
 .arc-seg p{font-size:11px;color:var(--text-dim);line-height:1.4}
 .arc-date{font-family:'Roboto Mono',monospace;font-size:10px;margin-top:10px;font-weight:500}
 .as1 .arc-date{color:var(--p1)} .as2 .arc-date{color:var(--p2)} .as3 .arc-date{color:var(--p3)}
-.as4 .arc-date{color:var(--p4)} .as5 .arc-date{color:var(--p5)} .as6 .arc-date{color:var(--p6)}
+.as4 .arc-date{color:var(--p4)}
 .arc-wks{font-family:'Roboto Mono',monospace;font-size:10px;color:var(--text-faint)}
 
 /* ── PHASE ── */
@@ -174,7 +168,6 @@ input:checked + .slider:before {
 .phase-badge{font-family:'Nunito',sans-serif;font-size:26px;font-weight:900;line-height:1;flex-shrink:0;width:64px;height:64px;border-radius:16px;display:flex;align-items:center;justify-content:center}
 .pp1 .phase-badge{background:var(--p1-bg);color:var(--p1)} .pp2 .phase-badge{background:var(--p2-bg);color:var(--p2)}
 .pp3 .phase-badge{background:var(--p3-bg);color:var(--p3)} .pp4 .phase-badge{background:var(--p4-bg);color:var(--p4)}
-.pp5 .phase-badge{background:var(--p5-bg);color:var(--p5)} .pp6 .phase-badge{background:var(--p6-bg);color:var(--p6)}
 .ph-title h2{font-family:'Nunito',sans-serif;font-size:24px;font-weight:900;letter-spacing:-.02em;color:var(--text);margin-bottom:4px}
 .tagline{font-size:14px;color:var(--text-dim);margin-bottom:12px;font-style:italic}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
@@ -184,8 +177,6 @@ input:checked + .slider:before {
 .pp2 .chip.hi{background:var(--p2-bg);border-color:rgba(234,67,53,.4);color:var(--p2-dark)}
 .pp3 .chip.hi{background:var(--p3-bg);border-color:rgba(249,171,0,.5);color:var(--p3-dark)}
 .pp4 .chip.hi{background:var(--p4-bg);border-color:rgba(52,168,83,.4);color:var(--p4-dark)}
-.pp5 .chip.hi{background:var(--p5-bg);border-color:rgba(255,109,0,.4);color:var(--p5-dark)}
-.pp6 .chip.hi{background:var(--p6-bg);border-color:rgba(132,48,206,.4);color:var(--p6-dark)}
 .chip.new-chip{background:var(--p4-bg);border-color:rgba(52,168,83,.5);color:var(--p4-dark)}
 .phase-body{padding:28px 36px}
 
@@ -200,25 +191,21 @@ input:checked + .slider:before {
 .milestone{font-family:'Roboto Mono',monospace;font-size:11px;font-weight:500;margin-top:auto;padding-top:10px;border-top:1px dashed var(--border);line-height:1.5; transition: border 0.3s;}
 .pp1 .milestone{color:var(--p1-dark)} .pp2 .milestone{color:var(--p2-dark)}
 .pp3 .milestone{color:var(--p3-dark)} .pp4 .milestone{color:var(--p4-dark)}
-.pp5 .milestone{color:var(--p5-dark)} .pp6 .milestone{color:var(--p6-dark)}
 
 /* ── PROJECTS ── */
 .plbl{font-family:'Roboto Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--text-faint);margin:24px 0 14px}
 .proj{border:1px solid var(--border);border-radius:14px;margin-bottom:10px;overflow:hidden;background:var(--surface);box-shadow:var(--shadow); transition: background 0.3s, border 0.3s;}
-.proj.stretch{border-style:dashed}
 .proj.is-new{border-color:rgba(52,168,83,.35)}
 .proj-top{padding:16px 20px 14px;display:flex;align-items:flex-start;justify-content:space-between;gap:12px;border-bottom:1px solid var(--border);background:var(--bg); transition: background 0.3s, border 0.3s;}
 .pid{font-family:'Roboto Mono',monospace;font-size:11px;margin-bottom:4px;display:flex;align-items:center;gap:6px}
 .pp1 .pid{color:var(--p1)} .pp2 .pid{color:var(--p2)} .pp3 .pid{color:var(--p3)}
-.pp4 .pid{color:var(--p4)} .pp5 .pid{color:var(--p5)} .pp6 .pid{color:var(--p6)}
+.pp4 .pid{color:var(--p4)}
 .pname{font-family:'Nunito',sans-serif;font-size:17px;font-weight:800;color:var(--text)}
 .diff{font-family:'Roboto Mono',monospace;font-size:10px;font-weight:500;padding:4px 12px;border-radius:20px;flex-shrink:0;margin-top:2px}
 .d-core{background:var(--p1-bg);color:var(--p1-dark)}
 .d-build{background:var(--p2-bg);color:var(--p2-dark)}
 .d-adv{background:var(--p3-bg);color:var(--p3-dark)}
-.d-scale{background:var(--p4-bg);color:var(--p4-dark)}
-.d-cap{background:var(--p6-bg);color:var(--p6-dark)}
-.d-str{background:var(--bg);color:var(--text-dim);border:1px dashed var(--border)}
+.d-cap{background:var(--p4-bg);color:var(--p4-dark)}
 .pbody{padding:18px 20px}
 .prow{margin-bottom:14px;font-size:14px;line-height:1.65;color:var(--text-mid)}
 .prow:last-child{margin-bottom:0}
@@ -245,8 +232,8 @@ input:checked + .slider:before {
 .g-dot .d3{background:var(--g-yellow)} .g-dot .d4{background:var(--g-green)}
 
 /* ── RESPONSIVE ── */
-@media(max-width:760px){.arc{grid-template-columns:repeat(3,1fr)}.hero{padding:32px 24px}.phase-hdr{flex-direction:column;gap:12px}.phase-body{padding:20px 24px}}
-@media(max-width:480px){.arc{grid-template-columns:repeat(2,1fr)}.stats{flex-direction:column}}
+@media(max-width:760px){.arc{grid-template-columns:repeat(2,1fr)}.hero{padding:32px 24px}.phase-hdr{flex-direction:column;gap:12px}.phase-body{padding:20px 24px}}
+@media(max-width:480px){.stats{flex-direction:column}}
 </style>
 </head>
 <body>
@@ -262,21 +249,21 @@ input:checked + .slider:before {
 
 <div class="hero">
   <div class="hero-rainbow"><span></span><span></span><span></span><span></span></div>
-  <div class="hero-eyebrow">28-Week Expedition · June 15 – December 27, 2026</div>
-  <h1>The Road to<br/><span class="blue">MLOps</span> &amp; <span class="green">Data Engineering</span></h1>
-  <p class="hero-sub">A deliberate, unhurried transition to AI automation—built on deep systems, structured logic, and relentless execution.</p>
+  <div class="hero-eyebrow">17-Week Expedition · June 15 – October 11, 2026</div>
+  <h1>The Road to<br/><span class="blue">Data</span> <span class="green">Engineering</span></h1>
+  <p class="hero-sub">A deliberate, unhurried transition to automated pipelines—built on deep systems, structured logic, and relentless execution.</p>
   <div class="stats">
-    <div class="stat"><div class="stat-v">28</div><div class="stat-l">Weeks</div></div>
-    <div class="stat"><div class="stat-v">~630</div><div class="stat-l">Total Hours</div></div>
-    <div class="stat"><div class="stat-v">6</div><div class="stat-l">Phases</div></div>
-    <div class="stat"><div class="stat-v">17</div><div class="stat-l">Projects</div></div>
+    <div class="stat"><div class="stat-v">17</div><div class="stat-l">Weeks</div></div>
+    <div class="stat"><div class="stat-v">~380</div><div class="stat-l">Total Hours</div></div>
+    <div class="stat"><div class="stat-v">4</div><div class="stat-l">Phases</div></div>
+    <div class="stat"><div class="stat-v">11</div><div class="stat-l">Projects</div></div>
     <div class="stat"><div class="stat-v">20–25</div><div class="stat-l">Hrs / Week</div></div>
   </div>
 </div>
 
 <div class="info-card">
   <h3>The Blueprint</h3>
-  <p>This roadmap bridges the gap between learning syntax and deploying production-grade AI infrastructure. It heavily indexes on CI/CD, streaming data (Kafka), Kubernetes, and seamless Data-to-ML handoffs. Timeline runs from mid-June to the end of December, accommodating a healthy 20–25 hour weekly rhythm.</p>
+  <p>This roadmap bridges the gap between learning syntax and deploying production-grade data infrastructure. It heavily indexes on Python, SQL, CI/CD, Airflow orchestration, dbt modeling, and cloud data warehousing. Timeline runs from mid-June to early October, accommodating a healthy 20–25 hour weekly rhythm.</p>
 </div>
 
 <div class="info-card green-card">
@@ -284,14 +271,12 @@ input:checked + .slider:before {
   <p>Since you have offline access to the O'Reilly archives and an active DataCamp scholarship, the prior time constraint is lifted. Proceed deliberately. Map your reading of <em>Fundamentals of Data Engineering</em> and <em>Designing Data-Intensive Applications</em> directly to the respective pipeline and infrastructure phases below.</p>
 </div>
 
-<div class="sec-label"><span>28-Week Timeline</span></div>
+<div class="sec-label"><span>17-Week Timeline</span></div>
 <div class="arc">
   <div class="arc-seg as1"><div class="arc-num">01</div><h4>Foundations</h4><p>Python · SQL · pytest</p><div class="arc-date">Jun 15–Jul 12</div><div class="arc-wks">4 weeks</div></div>
   <div class="arc-seg as2"><div class="arc-num">02</div><h4>Pipelines</h4><p>Airflow · dbt · Docker</p><div class="arc-date">Jul 13–Aug 9</div><div class="arc-wks">4 weeks</div></div>
   <div class="arc-seg as3"><div class="arc-num">03</div><h4>Cloud + NoSQL</h4><p>GCP · BigQuery · MongoDB</p><div class="arc-date">Aug 10–Sep 13</div><div class="arc-wks">5 weeks</div></div>
-  <div class="arc-seg as4"><div class="arc-num">04</div><h4>Scale + Infra</h4><p>Spark · CDC · K8s</p><div class="arc-date">Sep 14–Oct 25</div><div class="arc-wks">6 weeks</div></div>
-  <div class="arc-seg as5"><div class="arc-num">05</div><h4>Modern Stack</h4><p>Snowflake · MLflow · FastAPI</p><div class="arc-date">Oct 26–Nov 29</div><div class="arc-wks">5 weeks</div></div>
-  <div class="arc-seg as6"><div class="arc-num">06</div><h4>Career</h4><p>Capstone · Apply</p><div class="arc-date">Nov 30–Dec 27</div><div class="arc-wks">4 weeks</div></div>
+  <div class="arc-seg as4"><div class="arc-num">04</div><h4>Career</h4><p>Capstone · Apply</p><div class="arc-date">Sep 14–Oct 11</div><div class="arc-wks">4 weeks</div></div>
 </div>
 
 <div class="sec-label"><span>Phase 01 · June 15 – July 12 · 4 Weeks</span></div>
@@ -563,207 +548,16 @@ input:checked + .slider:before {
   </div>
 </section>
 
-<div class="sec-label"><span>Phase 04 · September 14 – October 25 · 6 Weeks</span></div>
+<div class="sec-label"><span>Phase 04 · September 14 – October 11 · 4 Weeks</span></div>
 <section class="phase pp4">
   <div class="phase-hdr">
     <div class="phase-badge">04</div>
     <div class="ph-title">
-      <h2>Scale, Streaming &amp; Infrastructure</h2>
-      <p class="tagline">Streaming data is the bloodline of real-time AI automation.</p>
-      <div class="chips">
-        <span class="chip hi">September 14 – October 25</span>
-        <span class="chip hi">Weeks 14–19</span>
-        <span class="chip">Spark · Kafka · dbt</span>
-        <span class="chip new-chip">+ Debezium · K8s · Observability</span>
-      </div>
-    </div>
-  </div>
-  <div class="phase-body">
-    <div class="weeks">
-      <div class="wk">
-        <div class="wk-lbl">WEEK 14 · Sep 14–20</div>
-        <div class="wk-focus">PySpark Foundations</div>
-        <ul>
-          <li>SparkSession configuration and cluster architecture.</li>
-          <li>Transformations (lazy) vs Actions (eager).</li>
-        </ul>
-        <div class="milestone">Milestone: Process a 2GB+ CSV using PySpark locally, avoiding OOM memory errors through proper partitioning.</div>
-      </div>
-      <div class="wk">
-        <div class="wk-lbl">WEEK 15 · Sep 21–27</div>
-        <div class="wk-focus">PySpark Applied</div>
-        <ul>
-          <li>Broadcast Joins vs Shuffle Joins.</li>
-          <li>User Defined Functions (UDFs).</li>
-        </ul>
-        <div class="milestone">Milestone: Execute complex joins on distributed data and write the output back to GCS as snappy-compressed Parquet.</div>
-      </div>
-      <div class="wk new-wk">
-        <div class="wk-lbl">WEEK 16 · Sep 28–Oct 4</div>
-        <div class="wk-focus">Kafka Fundamentals</div>
-        <ul>
-          <li>Zookeeper/KRaft, Topics, Partitions, Offsets.</li>
-          <li>Python Producers and Consumers.</li>
-        </ul>
-        <div class="milestone">Milestone: Stream simulated airline ticketing data through Kafka and read it instantly via a Python consumer.</div>
-      </div>
-      <div class="wk new-wk">
-        <div class="wk-lbl">WEEK 17 · Oct 5–11</div>
-        <div class="wk-focus">Debezium CDC</div>
-        <ul>
-          <li>Write-Ahead Logs (WAL) in Postgres.</li>
-          <li>Kafka Connect integration.</li>
-        </ul>
-        <div class="milestone">Milestone: Update a DB row and witness the change payload appear instantly in a Kafka topic.</div>
-      </div>
-      <div class="wk new-wk">
-        <div class="wk-lbl">WEEK 18 · Oct 12–18</div>
-        <div class="wk-focus">Quality + Observability</div>
-        <ul>
-          <li>Great Expectations JSON rulesets.</li>
-          <li>Grafana dashboards + Prometheus metrics.</li>
-        </ul>
-        <div class="milestone">Milestone: Trigger a Grafana alert automatically when Great Expectations detects anomalous data.</div>
-      </div>
-      <div class="wk new-wk">
-        <div class="wk-lbl">WEEK 19 · Oct 19–25</div>
-        <div class="wk-focus">Kubernetes + Helm</div>
-        <ul>
-          <li>Minikube local cluster.</li>
-          <li>K8s Pods, Deployments, Services.</li>
-        </ul>
-        <div class="milestone">Milestone: Deploy Apache Airflow to your local K8s cluster using the official Helm chart.</div>
-      </div>
-    </div>
-    <div class="plbl">Phase 4 Projects</div>
-    <div class="proj">
-      <div class="proj-top"><div><div class="pid">P4-A · WEEKS 14–15</div><div class="pname">Spark Processing Pipeline</div></div><span class="diff d-scale">Scale</span></div>
-      <div class="pbody">
-        <div class="prow"><strong>Objective</strong>Prove you can handle datasets that exceed local RAM constraints by leveraging distributed computing logic.</div>
-        <div class="prow"><strong>Architecture</strong>A PySpark script running inside a Docker container, pulling massive datasets from GCS, performing aggregations and window functions, and pushing back to the Gold layer.</div>
-        <div class="prow"><strong>The Hard Part</strong>Understanding Spark's lazy evaluation model—realizing that your code hasn't actually processed anything until an action (like .write() or .show()) is called.</div>
-      </div>
-    </div>
-    <div class="proj is-new">
-      <div class="proj-top"><div><div class="pid">P4-B · WEEKS 16–17</div><div class="pname">CDC Streaming Architecture</div></div><span class="diff d-scale">Scale</span></div>
-      <div class="pbody">
-        <div class="prow"><strong>Objective</strong>Build the real-time event backbone used in modern enterprise and AI systems using Change Data Capture.</div>
-        <div class="prow"><strong>Airline Context</strong>Simulate an operational database handling flight delays. As soon as a flight status updates to "Delayed" in Postgres, Debezium captures the transaction log, pushes it to Kafka, and a downstream consumer triggers a mock "alert" script.</div>
-        <div class="prow"><strong>The Hard Part</strong>Configuring Debezium and Kafka Connect to talk to the PostgreSQL WAL accurately without losing messages.</div>
-      </div>
-    </div>
-    <div class="proj is-new">
-      <div class="proj-top"><div><div class="pid">P4-C · WEEK 18</div><div class="pname">Observability Framework</div></div><span class="diff d-scale">Scale</span></div>
-      <div class="pbody">
-        <div class="prow"><strong>Objective</strong>Data Engineering implies on-call responsibility. You must build systems that monitor themselves.</div>
-        <div class="prow"><strong>Architecture</strong>Great Expectations validating pipeline outputs. Grafana querying Prometheus metrics to visualize Airflow DAG success/failure rates in a live dashboard.</div>
-        <div class="prow"><strong>The Hard Part</strong>Defining rigorous enough data quality tests that catch real anomalies without creating "alert fatigue" from false positives.</div>
-      </div>
-    </div>
-    <div class="proj is-new">
-      <div class="proj-top"><div><div class="pid">P4-D · WEEK 19</div><div class="pname">K8s Orchestration Deployment</div></div><span class="diff d-scale">Scale</span></div>
-      <div class="pbody">
-        <div class="prow"><strong>Objective</strong>Step into the shoes of a Platform Engineer. Run your orchestration tool the way enterprises do.</div>
-        <div class="prow"><strong>Architecture</strong>Minikube running locally. Use Helm (a package manager for K8s) to deploy the Airflow webserver, scheduler, and worker pods.</div>
-        <div class="prow"><strong>The Hard Part</strong>Navigating kubectl commands to debug failing pods, view internal container logs, and understand Kubernetes networking (Services/Ingress).</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="sec-label"><span>Phase 05 · October 26 – November 29 · 5 Weeks</span></div>
-<section class="phase pp5">
-  <div class="phase-hdr">
-    <div class="phase-badge">05</div>
-    <div class="ph-title">
-      <h2>Modern Stack &amp; Model Serving</h2>
-      <p class="tagline">The direct bridge into MLOps: feeding algorithms and serving endpoints.</p>
-      <div class="chips">
-        <span class="chip hi">October 26 – November 29</span>
-        <span class="chip hi">Weeks 20–24</span>
-        <span class="chip">Snowflake · MLflow</span>
-        <span class="chip new-chip">+ FastAPI · Serving</span>
-      </div>
-    </div>
-  </div>
-  <div class="phase-body">
-    <div class="weeks">
-      <div class="wk">
-        <div class="wk-lbl">WEEK 20 · Oct 26–Nov 1</div>
-        <div class="wk-focus">Snowflake &amp; Modern DWH</div>
-        <ul>
-          <li>Virtual warehouses and separation of compute/storage.</li>
-          <li>Time Travel querying to restore dropped tables.</li>
-        </ul>
-        <div class="milestone">Milestone: Execute a query using Time Travel to restore data from exactly 15 minutes ago.</div>
-      </div>
-      <div class="wk">
-        <div class="wk-lbl">WEEK 21 · Nov 2–8</div>
-        <div class="wk-focus">Airbyte + ELT Patterns</div>
-        <ul>
-          <li>Configuring Source to Destination connectors.</li>
-          <li>Understanding Extract-Load vs Extract-Transform-Load.</li>
-        </ul>
-        <div class="milestone">Milestone: Sync paginated data from a public REST API straight into a database using Airbyte.</div>
-      </div>
-      <div class="wk">
-        <div class="wk-lbl">WEEK 22 · Nov 9–15</div>
-        <div class="wk-focus">Feature Engineering 101</div>
-        <ul>
-          <li>Handling missing values robustly.</li>
-          <li>Categorical encoding (One-Hot, Label).</li>
-        </ul>
-        <div class="milestone">Milestone: Build a pipeline that transforms raw strings into numerical vectors ready for scikit-learn.</div>
-      </div>
-      <div class="wk">
-        <div class="wk-lbl">WEEK 23 · Nov 16–22</div>
-        <div class="wk-focus">Preventing ML Leakage</div>
-        <ul>
-          <li>Strict Train/Test boundaries.</li>
-          <li>Temporal splitting for time-series data.</li>
-        </ul>
-        <div class="milestone">Milestone: Refactor your feature pipeline to ensure scaling factors are fitted only on training data.</div>
-      </div>
-      <div class="wk new-wk">
-        <div class="wk-lbl">WEEK 24 · Nov 23–29</div>
-        <div class="wk-focus">MLflow &amp; FastAPI Serving</div>
-        <ul>
-          <li>Experiment tracking and model registry (MLflow).</li>
-          <li>Building REST endpoints for predictions (FastAPI).</li>
-        </ul>
-        <div class="milestone">Milestone: Track a training run in MLflow, then serve the resulting best model via a Dockerised FastAPI endpoint.</div>
-      </div>
-    </div>
-    <div class="plbl">Phase 5 Projects</div>
-    <div class="proj">
-      <div class="proj-top"><div><div class="pid">P5-A · WEEKS 22–23</div><div class="pname">Feature Generation Pipeline</div></div><span class="diff d-adv">Advanced</span></div>
-      <div class="pbody">
-        <div class="prow"><strong>Objective</strong>Cross the threshold into AI Engineering by formatting data explicitly for algorithmic consumption.</div>
-        <div class="prow"><strong>Architecture</strong>Python pipeline (using Pandas/Scikit-learn) that ingests raw operational data, imputes missing values, engineers 10 highly correlated features, scales them, and outputs strict train.parquet and test.parquet files.</div>
-        <div class="prow"><strong>The Hard Part</strong>Implementing a "temporal split" mathematically so that no future data leaks into the training set (a cardinal sin in MLOps).</div>
-      </div>
-    </div>
-    <div class="proj stretch is-new">
-      <div class="proj-top"><div><div class="pid">P5-B · WEEK 24</div><div class="pname">E2E ML Data Pipeline & API Serving</div></div><span class="diff d-str">Core Transition</span></div>
-      <div class="pbody">
-        <div class="prow"><strong>Objective</strong>Automate the data handoff sequence and expose the model for software engineering teams.</div>
-        <div class="prow"><strong>Architecture</strong>Airflow orchestrates the pipeline: Extract from DB → Engineer Features → Output Parquet → Trigger ML Training Script. The script uses MLflow to log the model. Finally, spin up a FastAPI Docker container that loads the best model and accepts JSON POST requests for live predictions.</div>
-        <div class="prow"><strong>The Hard Part</strong>Managing the container network so the FastAPI container can securely pull the serialized model artifact (.pkl or ONNX) from the MLflow tracking volume.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="sec-label"><span>Phase 06 · November 30 – December 27 · 4 Weeks</span></div>
-<section class="phase pp6">
-  <div class="phase-hdr">
-    <div class="phase-badge">06</div>
-    <div class="ph-title">
       <h2>Portfolio &amp; Career Transition</h2>
       <p class="tagline">Consolidate the architecture. Prove your systemic competence.</p>
       <div class="chips">
-        <span class="chip hi">November 30 – December 27</span>
-        <span class="chip hi">Weeks 25–28</span>
+        <span class="chip hi">September 14 – October 11</span>
+        <span class="chip hi">Weeks 14–17</span>
         <span class="chip">Capstone · System Design · Apply</span>
       </div>
     </div>
@@ -771,16 +565,16 @@ input:checked + .slider:before {
   <div class="phase-body">
     <div class="weeks">
       <div class="wk">
-        <div class="wk-lbl">WEEKS 25–26 · Nov 30–Dec 13</div>
+        <div class="wk-lbl">WEEKS 14–15 · Sep 14–27</div>
         <div class="wk-focus">Production Capstone Build</div>
         <ul>
-          <li>Integrate Phase 2 (dbt) with Phase 4 (Kafka).</li>
+          <li>Integrate Phase 2 (dbt) with Phase 3 (Cloud Data).</li>
           <li>Deploy full infrastructure via Terraform.</li>
         </ul>
         <div class="milestone">Milestone: An end-to-end repository with a master Docker-compose file executing the entire data lifecycle.</div>
       </div>
       <div class="wk">
-        <div class="wk-lbl">WEEK 27 · Dec 14–Dec 20</div>
+        <div class="wk-lbl">WEEK 16 · Sep 28–Oct 4</div>
         <div class="wk-focus">Documentation &amp; Open Source</div>
         <ul>
           <li>Write a README that reads like professional tech docs.</li>
@@ -789,30 +583,30 @@ input:checked + .slider:before {
         <div class="milestone">Milestone: Record a 5-minute Loom video architecturally breaking down your capstone.</div>
       </div>
       <div class="wk">
-        <div class="wk-lbl">WEEK 28 · Dec 21–Dec 27</div>
+        <div class="wk-lbl">WEEK 17 · Oct 5–11</div>
         <div class="wk-focus">The Job Market Pivot</div>
         <ul>
-          <li>Refine your resume focusing purely on AI/Data workflows.</li>
-          <li>Target freelance AI automation clients or MLOps roles.</li>
+          <li>Refine your resume focusing purely on Data pipelines.</li>
+          <li>Target freelance automation clients or DE roles.</li>
         </ul>
-        <div class="milestone">Milestone: Submit applications. You have met your December goal.</div>
+        <div class="milestone">Milestone: Submit applications. You have a deployable portfolio.</div>
       </div>
     </div>
-    <div class="plbl">Phase 6 Projects</div>
+    <div class="plbl">Phase 4 Projects</div>
     <div class="proj">
-      <div class="proj-top"><div><div class="pid">P6-A · WEEKS 25–26</div><div class="pname">Production Capstone System</div></div><span class="diff d-cap">Capstone</span></div>
+      <div class="proj-top"><div><div class="pid">P4-A · WEEKS 14–15</div><div class="pname">Production Capstone System</div></div><span class="diff d-cap">Capstone</span></div>
       <div class="pbody">
-        <div class="prow"><strong>Objective</strong>Build the ultimate portfolio piece — a singular, complex artifact that proves you can build, scale, and monitor AI data infrastructure.</div>
-        <div class="prow"><strong>Architecture</strong>Automated ingestion (API + Database CDC) → Kafka Stream → GCS Medallion Lake → dbt Transformations → BigQuery → Features output to MLflow → Served via FastAPI. Fully monitored by Grafana, orchestrated by Airflow, tested via CI/CD.</div>
-        <div class="prow"><strong>Domain Advantage</strong>Focus this heavily on logistics, routing, or customer service analytics. E.g., <em>"Real-Time Flight Delay Prediction &amp; Customer Re-routing Pipeline based on West African Weather APIs and Simulated Ticketing Systems."</em></div>
-        <div class="prow"><strong>The Hard Part</strong>Tying 12 different tools together without version conflicts or port mapping errors in Docker.</div>
+        <div class="prow"><strong>Objective</strong>Build the ultimate portfolio piece — a singular, complex artifact that proves you can build, scale, and orchestrate modern data infrastructure.</div>
+        <div class="prow"><strong>Architecture</strong>Automated ingestion (API + Database) → GCS Medallion Lake → dbt Transformations → BigQuery. Orchestrated entirely by Airflow, deployed via Docker, and tested via GitHub Actions.</div>
+        <div class="prow"><strong>Domain Advantage</strong>Focus this heavily on logistics, routing, or customer service analytics. E.g., <em>"Automated Flight Delay Reporting Pipeline based on West African Weather APIs and Simulated Ticketing Systems."</em></div>
+        <div class="prow"><strong>The Hard Part</strong>Tying multiple tools together smoothly in a single repository without version conflicts or Docker networking issues.</div>
       </div>
     </div>
     <div class="proj">
-      <div class="proj-top"><div><div class="pid">P6-B · WEEK 27</div><div class="pname">Open Source Contribution</div></div><span class="diff d-cap">Career</span></div>
+      <div class="proj-top"><div><div class="pid">P4-B · WEEK 16</div><div class="pname">Open Source Contribution</div></div><span class="diff d-cap">Career</span></div>
       <div class="pbody">
         <div class="prow"><strong>Objective</strong>Prove you can collaborate in enterprise environments by merging code into a tool you didn't create.</div>
-        <div class="prow"><strong>Action</strong>Find a "good first issue" on the GitHub repos for dbt, Airbyte, or Great Expectations. Fix a bug, update documentation, or add a requested feature.</div>
+        <div class="prow"><strong>Action</strong>Find a "good first issue" on the GitHub repos for dbt or Airbyte. Fix a bug, update documentation, or add a requested feature.</div>
         <div class="prow"><strong>The Hard Part</strong>Understanding the contribution guidelines and navigating a massive, unfamiliar codebase to make a small change.</div>
       </div>
     </div>
@@ -820,31 +614,24 @@ input:checked + .slider:before {
 </section>
 
 <div class="sec-label"><span>Career Readiness Checklist</span></div>
-<p style="font-size:14px;color:var(--text-dim);margin-bottom:20px;">14 out of 17 checked means you are ready to apply.</p>
+<p style="font-size:14px;color:var(--text-dim);margin-bottom:20px;">8 out of 10 checked means you are ready to apply.</p>
 <div class="checklist">
-  <label class="ci"><input type="checkbox" data-key="c0"><span class="ct">GitHub has 6+ public repos, each with a proper README</span></label>
-  <label class="ci"><input type="checkbox" data-key="c1"><span class="ct">Every repo has a passing GitHub Actions CI badge</span></label>
-  <label class="ci"><input type="checkbox" data-key="c2"><span class="ct">Production capstone is live, documented, and shareable</span></label>
-  <label class="ci"><input type="checkbox" data-key="c3"><span class="ct">Can explain the medallion architecture without notes</span></label>
-  <label class="ci"><input type="checkbox" data-key="c4"><span class="ct">dbt project with full lineage graph is public on GitHub</span></label>
-  <label class="ci"><input type="checkbox" data-key="c5"><span class="ct">Airflow pipeline has run automatically 20+ times</span></label>
-  <label class="ci"><input type="checkbox" data-key="c6"><span class="ct">BigQuery set up and used in a real project with Terraform</span></label>
-  <label class="ci"><input type="checkbox" data-key="c7"><span class="ct">MongoDB ingestion pipeline exists and is working</span></label>
-  <label class="ci"><input type="checkbox" data-key="c8"><span class="ct">CDC pipeline with Debezium built and documented</span></label>
-  <label class="ci"><input type="checkbox" data-key="c9"><span class="ct">Airflow deployed on Kubernetes using Helm</span></label>
-  <label class="ci"><input type="checkbox" data-key="c10"><span class="ct">Grafana dashboard monitoring at least one pipeline</span></label>
-  <label class="ci"><input type="checkbox" data-key="c11"><span class="ct">Great Expectations integrated into at least one pipeline</span></label>
-  <label class="ci"><input type="checkbox" data-key="c12"><span class="ct">PySpark job written and benchmarked against pandas</span></label>
-  <label class="ci"><input type="checkbox" data-key="c13"><span class="ct">Can explain data leakage and prevent it in a pipeline</span></label>
-  <label class="ci"><input type="checkbox" data-key="c14"><span class="ct">Can write a FastAPI model serving script containerised in Docker</span></label>
-  <label class="ci"><input type="checkbox" data-key="c15"><span class="ct">Open source contribution merged to a public project</span></label>
-  <label class="ci"><input type="checkbox" data-key="c16"><span class="ct">Applied to 5+ freelance, MLOps, or DE roles</span></label>
+  <label class="ci"><input type="checkbox" data-key="new_c0"><span class="ct">GitHub has 6+ public repos, each with a proper README</span></label>
+  <label class="ci"><input type="checkbox" data-key="new_c1"><span class="ct">Every repo has a passing GitHub Actions CI badge</span></label>
+  <label class="ci"><input type="checkbox" data-key="new_c2"><span class="ct">Production capstone is live, documented, and shareable</span></label>
+  <label class="ci"><input type="checkbox" data-key="new_c3"><span class="ct">Can explain the medallion architecture without notes</span></label>
+  <label class="ci"><input type="checkbox" data-key="new_c4"><span class="ct">dbt project with full lineage graph is public on GitHub</span></label>
+  <label class="ci"><input type="checkbox" data-key="new_c5"><span class="ct">Airflow pipeline has run automatically 20+ times</span></label>
+  <label class="ci"><input type="checkbox" data-key="new_c6"><span class="ct">BigQuery set up and used in a real project with Terraform</span></label>
+  <label class="ci"><input type="checkbox" data-key="new_c7"><span class="ct">MongoDB ingestion pipeline exists and is working</span></label>
+  <label class="ci"><input type="checkbox" data-key="new_c8"><span class="ct">Open source contribution merged to a public project</span></label>
+  <label class="ci"><input type="checkbox" data-key="new_c9"><span class="ct">Applied to 5+ freelance or Data Engineering roles</span></label>
 </div>
 
 <footer class="footer">
   <div class="g-dot"><span class="d1"></span><span class="d2"></span><span class="d3"></span><span class="d4"></span></div>
   <p class="fq">"You don't need to be ready to start.<br/>You just need to start to become ready."</p>
-  <p class="fs">Updated June 2026 · 28-Week Roadmap · June – December 2026</p>
+  <p class="fs">Updated June 2026 · 17-Week Roadmap · June – October 2026</p>
 </footer>
 
 </div>
@@ -876,7 +663,7 @@ toggleSwitch.addEventListener('change', switchTheme, false);
 // Checklist Logic
 const boxes = document.querySelectorAll('.checklist input[type="checkbox"]');
 boxes.forEach(cb => {
-  const key = 'mlops_roadmap_v6_' + cb.dataset.key;
+  const key = 'mlops_roadmap_v7_' + cb.dataset.key;
   try {
     if (localStorage.getItem(key) === 'true') {
       cb.checked = true;
