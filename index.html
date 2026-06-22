@@ -181,16 +181,8 @@
     .g-dot { width: 10px; height: 10px; border-radius: 50%; }
     .fq { font-family: 'Poppins', sans-serif; font-size: 18px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
     .fs { font-family: 'Roboto Mono', monospace; font-size: 11px; color: var(--text3); }
-    @media(max-width: 680px) {
-      .arc { grid-template-columns: 1fr 1fr; }
-      .stat-row { grid-template-columns: repeat(3, 1fr); }
-      .rhythm { grid-template-columns: repeat(4, 1fr); }
-      .phase-banner-top { flex-direction: column; gap: 8px; }
-    }
-    @media(max-width: 420px) {
-      .arc { grid-template-columns: 1fr; }
-      .stat-row { grid-template-columns: 1fr 1fr; }
-    }
+    @media(max-width: 680px) { .arc { grid-template-columns: 1fr 1fr; } .stat-row { grid-template-columns: repeat(3, 1fr); } .rhythm { grid-template-columns: repeat(4, 1fr); } .phase-banner-top { flex-direction: column; gap: 8px; } }
+    @media(max-width: 420px) { .arc { grid-template-columns: 1fr; } .stat-row { grid-template-columns: 1fr 1fr; } }
   </style>
 </head>
 <body>
@@ -217,10 +209,10 @@
       <div class="dot" style="background:var(--green)"></div>
     </div>
     <h1><span class="blue">The</span> <span class="red">Road</span> <span class="yellow">to</span><br/><span class="green">Data</span> <span class="blue">Engineering</span></h1>
-    <p class="hero-sub">A deliberately-paced career transition — built on real projects, O'Reilly books, and industry-aligned fundamentals. No shortcuts. No pressure.</p>
+    <p class="hero-sub">A nine-month, deliberately-paced career transition — built on real projects, O'Reilly books, and industry-aligned fundamentals. No shortcuts. No pressure.</p>
     <div class="pill-row">
       <span class="pill blue-pill">June 14, 2026 – March 14, 2027</span>
-      <span class="pill green-pill">~14 hrs / week</span>
+      <span class="pill green-pill">~14 hrs / week · 2 hrs / day</span>
       <span class="pill">41 Weeks</span>
       <span class="pill">O'Reilly Offline Access</span>
     </div>
@@ -236,7 +228,7 @@
 
   <aside class="mentor-card">
     <h3>🎓 A Career Mentor's Take on This Path</h3>
-    <p>Nine months is enough to become job-ready for junior and entry-level DE roles — if you go deep rather than wide. The biggest mistake self-taught engineers make is trying to learn everything. The second biggest is finishing a course and thinking they're done. This roadmap does neither.</p>
+    <p>Nine months at 14 hours a week is enough to become job-ready for junior and entry-level DE roles — if you go deep rather than wide. The biggest mistake self-taught engineers make is trying to learn everything. The second biggest is finishing a course and thinking they're done. This roadmap does neither.</p>
     <p>The four phases mirror how real DE careers develop: first you master the tools, then you build pipelines, then you move to the cloud, then you show your work and get hired. O'Reilly access changes your learning quality significantly — you're reading from the people who built these tools, not someone who summarised them. Use every page of it.</p>
     <p>The skills you will have at the end of Phase 4 — Python, SQL, Airflow, dbt, Docker, BigQuery, CI/CD, data quality, and a production-grade capstone — are the exact skills that appear on the majority of junior-to-mid DE job descriptions globally, and specifically in Nigeria's growing tech sector.</p>
   </aside>
@@ -257,19 +249,18 @@
     </div>
     <div class="arc-card ac3">
       <div class="arc-num">PHASE 03</div>
-      <h4>Cloud &amp; Analytics</h4>
+      <h4>Cloud & Analytics</h4>
       <p>GCP · BigQuery · MongoDB · AWS · Terraform · Data Lakes</p>
       <div class="arc-date">Oct 5 – Dec 27 · 12 weeks</div>
     </div>
     <div class="arc-card ac4">
       <div class="arc-num">PHASE 04</div>
-      <h4>Portfolio &amp; Career</h4>
+      <h4>Portfolio & Career</h4>
       <p>Capstone · System Design · Resume · Open Source · Apply</p>
       <div class="arc-date">Dec 28 – Mar 14 · 11 weeks</div>
     </div>
   </section>
 
-  <!-- PHASE 1 -->
   <div class="sec-head"><span class="sec-label">Phase 01 · June 14 – August 1 · 7 Weeks</span><div class="sec-line"></div></div>
   <section class="phase ph1">
     <div class="phase-banner ph1">
@@ -286,20 +277,20 @@
           </div>
         </div>
       </div>
-      <p class="phase-desc">Most beginners rush foundations. They watch tutorials at 2× speed and feel productive. That feeling is a trap. The goal of Phase 1 is to make Python and SQL feel like first languages — automatic, not looked up. Two databases from week one: PostgreSQL and MySQL are both required in professional DE roles. pytest is introduced here because testing is a professional discipline, not an afterthought you bolt on later. Seven weeks here is the right call — depth over speed.</p>
+      <p class="phase-desc">Most beginners rush foundations. They watch tutorials at 2× speed and feel productive. That feeling is a trap. The goal of Phase 1 is to make Python and SQL feel like first languages — automatic, not looked up. Two databases from week one: PostgreSQL and MySQL are both required in professional DE roles. pytest is introduced here because testing is a professional discipline, not an afterthought. Seven weeks gives you the space to go deep without cutting corners.</p>
     </div>
     <div class="week-grid">
       <article class="wk"><div class="wk-lbl">WEEK 1 · Jun 14–20</div><div class="wk-focus">Python for Data Work</div><div class="wk-desc">File I/O, pandas fundamentals, list comprehensions, functions, error handling. Write code every single day. No passive watching.</div></article>
       <article class="wk"><div class="wk-lbl">WEEK 2 · Jun 21–27</div><div class="wk-focus">Python Depth + MySQL</div><div class="wk-desc">OOP basics, virtual environments, modules, JSON handling. Install MySQL alongside PostgreSQL. Learn dialect differences: backticks, LIMIT syntax, data types.</div></article>
-      <article class="wk"><div class="wk-lbl">WEEK 3 · Jun 28–Jul 4</div><div class="wk-focus">Python Consolidation</div><div class="wk-desc">Reinforce lists, dicts, functions, and OOP. Build small scripts daily. Solidify what Weeks 1–2 introduced before moving to SQL.</div></article>
-      <article class="wk"><div class="wk-lbl">WEEK 4 · Jul 5–11</div><div class="wk-focus">SQL Foundations</div><div class="wk-desc">SELECT, WHERE, JOIN, GROUP BY, ORDER BY across both MySQL and PostgreSQL. DBeaver setup. Write 20+ queries on real data. Know the basics cold.</div></article>
+      <article class="wk"><div class="wk-lbl">WEEK 3 · Jun 28–Jul 4</div><div class="wk-focus">Python Consolidation</div><div class="wk-desc">Reinforce lists, dicts, functions, and file I/O with hands-on exercises. Build small scripts from scratch. This week is for making Python automatic, not just familiar.</div></article>
+      <article class="wk"><div class="wk-lbl">WEEK 4 · Jul 5–11</div><div class="wk-focus">SQL Foundations</div><div class="wk-desc">SELECT, WHERE, GROUP BY, ORDER BY, JOINs. Run every query in both PostgreSQL and MySQL. Same result, different syntax — notice where they diverge.</div></article>
       <article class="wk"><div class="wk-lbl">WEEK 5 · Jul 12–18</div><div class="wk-focus">SQL Mastery — Both Dialects</div><div class="wk-desc">Window functions, CTEs, subqueries, multi-table JOINs, EXPLAIN plans. Write 40+ queries. Same query in both MySQL and PostgreSQL. Know where they differ.</div></article>
-      <article class="wk"><div class="wk-lbl">WEEK 6 · Jul 19–25</div><div class="wk-focus">Data Formats + Git</div><div class="wk-desc">CSV vs JSON vs Parquet vs Avro — why each exists. Git workflow (branches, PRs, commit conventions). Start building your GitHub presence this week.</div></article>
-      <article class="wk new-wk"><div class="wk-lbl">WEEK 7 · Jul 26–Aug 1</div><div class="wk-focus">pytest + Project Build <span class="new-badge">KEY</span></div><div class="wk-desc">Write pytest unit tests for every function you've built. Aim for 80%+ coverage. Build P1-A and P1-B. Ship to GitHub with a CI badge.</div></article>
+      <article class="wk"><div class="wk-lbl">WEEK 6 · Jul 19–25</div><div class="wk-focus">SQL + Python Integration</div><div class="wk-desc">Connect Python to PostgreSQL and MySQL via sqlalchemy. Run queries from scripts. Load results into pandas DataFrames. This is how DEs actually work with databases.</div></article>
+      <article class="wk new-wk"><div class="wk-lbl">WEEK 7 · Jul 26–Aug 1</div><div class="wk-focus">Data Formats + Git + pytest <span class="new-badge">KEY</span></div><div class="wk-desc">CSV vs JSON vs Parquet vs Avro — why each exists. Git workflow (branches, PRs, commit conventions). Write pytest unit tests for every function you build.</div></article>
     </div>
     <div class="reading-block">
       <div class="rlbl">O'Reilly Books — Phase 1</div>
-      <div class="rrow"><div class="rico">📘</div><div><div class="rtitle">Fundamentals of Data Engineering</div><div class="rdetail">Reis &amp; Housley · Chapters 1–5 · Your DE bible. Start here and keep it close all nine months.</div></div></div>
+      <div class="rrow"><div class="rico">📘</div><div><div class="rtitle">Fundamentals of Data Engineering</div><div class="rdetail">Reis & Housley · Chapters 1–5 · Your DE bible. Start here and keep it close all nine months.</div></div></div>
       <div class="rrow"><div class="rico">📗</div><div><div class="rtitle">Python for Data Analysis — 3rd Edition</div><div class="rdetail">Wes McKinney · Chapters 1–10 · The pandas bible. Type every example. Editor open while reading.</div></div></div>
       <div class="rrow"><div class="rico">📙</div><div><div class="rtitle">Learning SQL — 3rd Edition</div><div class="rdetail">Alan Beaulieu · Full read · The clearest SQL progression book available. Covers both MySQL and PostgreSQL dialects.</div></div></div>
     </div>
@@ -311,8 +302,7 @@
       </div>
       <div class="pbody">
         <div class="prow"><strong>What You Build</strong>A command-line tool that accepts any CSV file, PostgreSQL table, or MySQL table and returns a complete quality report: null percentages, inferred types, duplicate rows, value distributions, and a list of suspected data issues. Supports both databases via a --db-type flag.</div>
-        <div class="prow"><strong>Why It Matters</strong>Data profiling is the first thing any DE does on a new dataset — in your first week at any real job, this will be useful. Building it yourself means you understand it, not just use it. You will reuse this tool in Phases 2 and 3.</div>
-        <div class="prow"><strong>Testing</strong>Write pytest unit tests for every transform function. Aim for 80%+ code coverage. This is non-negotiable — it is how professionals write code.</div>
+        <div class="prow"><strong>Why It Matters</strong>Data profiling is the first thing any DE does on a new dataset. Building it yourself means you understand it, not just use it. You will reuse this tool in Phases 2 and 3.</div>
         <div class="prow"><strong>Stack</strong>Python (pandas, argparse, tabulate, sqlalchemy), PostgreSQL, MySQL, pytest, GitHub with a CI badge.</div>
       </div>
       <div class="donebar">Run it on a dataset you have never seen before. It surfaces 3+ quality issues. Tests pass. A stranger can clone and run it in under 3 minutes.</div>
@@ -324,14 +314,12 @@
       </div>
       <div class="pbody">
         <div class="prow"><strong>What You Build</strong>Load a real multi-table dataset into both PostgreSQL and MySQL. Write 15 analytical queries covering aggregations, window functions (RANK, LAG, running totals), CTEs, JOINs, and conditional logic. Where the dialects differ, note it in a comment. Export as a clean HTML report with a business question per query.</div>
-        <div class="prow"><strong>Why It Matters</strong>SQL is the most-used skill in data engineering. Professional DE roles require fluency across multiple dialects. Writing the same query in both databases teaches you the differences — which is exactly what comes up in interviews at companies running mixed database stacks.</div>
         <div class="prow"><strong>Stack</strong>PostgreSQL, MySQL, DBeaver (free, connects to both), Python to render the HTML report. All SQL files committed to GitHub.</div>
       </div>
       <div class="donebar">Every query runs correctly in both databases. Dialect differences are documented inline. The HTML report is readable by a non-technical stakeholder.</div>
     </article>
   </section>
 
-  <!-- PHASE 2 -->
   <div class="sec-head"><span class="sec-label">Phase 02 · August 2 – October 4 · 9 Weeks</span><div class="sec-line"></div></div>
   <section class="phase ph2">
     <div class="phase-banner ph2">
@@ -348,28 +336,28 @@
           </div>
         </div>
       </div>
-      <p class="phase-desc">Nine weeks for pipeline engineering because Airflow and dbt both deserve more depth than a single week each. Airflow takes a full day just to get running. dbt takes real project work to understand properly. The extra weeks go into depth on both, plus a full week on data modeling (which most tutorials skip) and a dedicated CI/CD week that makes your repos look like professional engineering, not hobby projects.</p>
+      <p class="phase-desc">Nine weeks for pipeline engineering. Airflow and dbt both deserve more depth than a single week each. Airflow takes a full day just to get running. dbt takes real project work to understand properly. The extra weeks go into depth on both, plus a full week on data modeling (which most tutorials skip) and a dedicated CI/CD week that makes your repos look like professional engineering, not hobby projects.</p>
     </div>
     <div class="week-grid">
-      <article class="wk"><div class="wk-lbl">WEEK 8 · Aug 2–8</div><div class="wk-focus">Apache Airflow — Setup &amp; Basics</div><div class="wk-desc">DAGs, tasks, operators, connections, scheduling, the Airflow UI. Install via pip, then reproduce in Docker. Expect a full day of setup pain — that is the learning.</div></article>
+      <article class="wk"><div class="wk-lbl">WEEK 8 · Aug 2–8</div><div class="wk-focus">Apache Airflow — Setup & Basics</div><div class="wk-desc">DAGs, tasks, operators, connections, scheduling, the Airflow UI. Install via pip, then reproduce in Docker. Expect a full day of setup pain — that is the learning.</div></article>
       <article class="wk"><div class="wk-lbl">WEEK 9 · Aug 9–15</div><div class="wk-focus">Airflow — Depth</div><div class="wk-desc">XComs, sensors, custom operators, task dependencies, backfills, retries, SLAs. Advanced patterns that appear in real pipelines. Build a multi-branch DAG.</div></article>
-      <article class="wk"><div class="wk-lbl">WEEK 10 · Aug 16–22</div><div class="wk-focus">Airflow Consolidation</div><div class="wk-desc">Reinforce weeks 8–9 by building a complete real-world DAG from scratch. Debug and iterate. This is the week to break things and fix them.</div></article>
+      <article class="wk"><div class="wk-lbl">WEEK 10 · Aug 16–22</div><div class="wk-focus">Airflow Consolidation</div><div class="wk-desc">Build a second DAG from scratch — no tutorials. Debug it. Get it running reliably. Reinforce task dependencies and retry logic under your own hands.</div></article>
       <article class="wk"><div class="wk-lbl">WEEK 11 · Aug 23–29</div><div class="wk-focus">Data Modeling</div><div class="wk-desc">Star schemas, fact tables, dimension tables, slowly changing dimensions (SCD Types 1, 2, 3), normalisation tradeoffs. Design before you build — always.</div></article>
       <article class="wk"><div class="wk-lbl">WEEK 12 · Aug 30–Sep 5</div><div class="wk-focus">dbt Core</div><div class="wk-desc">Models, sources, refs, tests (not null, unique, accepted values), documentation, the lineage graph. Your first dbt project connected to your Phase 1 PostgreSQL data.</div></article>
-      <article class="wk"><div class="wk-lbl">WEEK 13 · Sep 6–12</div><div class="wk-focus">dbt — Depth</div><div class="wk-desc">Macros, packages, incremental models, snapshots for SCD Type 2, dbt Cloud intro. dbt is how senior analytics engineers think. Go deep here — it pays dividends.</div></article>
-      <article class="wk"><div class="wk-lbl">WEEK 14 · Sep 13–19</div><div class="wk-focus">dbt Consolidation</div><div class="wk-desc">Build a complete dbt project end-to-end: staging → intermediate → mart. Run dbt docs serve. Review every model. Fix gaps before moving to Docker.</div></article>
-      <article class="wk"><div class="wk-lbl">WEEK 15 · Sep 20–26</div><div class="wk-focus">Docker</div><div class="wk-desc">Docker images, containers, docker-compose. Package your full pipeline stack — Airflow, PostgreSQL, dbt. Anyone clones the repo, runs one command, everything runs.</div></article>
-      <article class="wk new-wk"><div class="wk-lbl">WEEK 16 · Sep 27–Oct 4</div><div class="wk-focus">CI/CD <span class="new-badge">KEY</span></div><div class="wk-desc">GitHub Actions: run pytest on every PR, validate Airflow DAGs on push, run dbt tests on merge. This is how professional DE teams work. Make it green.</div></article>
+      <article class="wk"><div class="wk-lbl">WEEK 13 · Sep 6–12</div><div class="wk-focus">dbt — Depth</div><div class="wk-desc">Macros, packages, incremental models, snapshots for SCD Type 2, dbt Cloud intro. dbt is how senior analytics engineers think. Go deep here.</div></article>
+      <article class="wk"><div class="wk-lbl">WEEK 14 · Sep 13–19</div><div class="wk-focus">dbt Consolidation</div><div class="wk-desc">Extend your dbt project: add a new mart model, write macros for repeated logic, and run the full test suite clean. Understand the lineage graph end to end.</div></article>
+      <article class="wk new-wk"><div class="wk-lbl">WEEK 15 · Sep 20–26</div><div class="wk-focus">Docker + CI/CD <span class="new-badge">KEY</span></div><div class="wk-desc">Docker images, containers, docker-compose. Package your full pipeline stack. GitHub Actions: run pytest on every PR, validate DAGs on push, run dbt tests on merge.</div></article>
+      <article class="wk"><div class="wk-lbl">WEEK 16 · Sep 27–Oct 4</div><div class="wk-focus">Phase 2 Integration</div><div class="wk-desc">Wire everything together. Airflow orchestrates dbt. dbt runs tests. Docker contains it all. CI/CD validates on every push. Run the full stack end to end.</div></article>
     </div>
     <div class="reading-block">
       <div class="rlbl">O'Reilly Books — Phase 2</div>
-      <div class="rrow"><div class="rico">📘</div><div><div class="rtitle">Fundamentals of Data Engineering</div><div class="rdetail">Reis &amp; Housley · Chapters 6–10 · Storage systems, ingestion, transformation, pipelines</div></div></div>
-      <div class="rrow"><div class="rico">📙</div><div><div class="rtitle">Data Pipelines Pocket Reference</div><div class="rdetail">James Densmore · O'Reilly 2021 · Read cover to cover in Week 8. Short, dense, zero filler. Everything in it is directly applicable.</div></div></div>
+      <div class="rrow"><div class="rico">📘</div><div><div class="rtitle">Fundamentals of Data Engineering</div><div class="rdetail">Reis & Housley · Chapters 6–10 · Storage systems, ingestion, transformation, pipelines</div></div></div>
+      <div class="rrow"><div class="rico">📙</div><div><div class="rtitle">Data Pipelines Pocket Reference</div><div class="rdetail">James Densmore · O'Reilly 2021 · Read cover to cover in Week 8. Short, dense, zero filler.</div></div></div>
     </div>
     <div class="plbl">Phase 2 Projects</div>
     <article class="proj">
       <div class="proj-top">
-        <div class="proj-id-wrap"><div class="proj-id">P2-A · WEEK 10</div><div class="pname">Automated Multi-Source Pipeline</div></div>
+        <div class="proj-id-wrap"><div class="proj-id">P2-A · WEEK 9</div><div class="pname">Automated Multi-Source Pipeline</div></div>
         <span class="diff d-build">Intermediate</span>
       </div>
       <div class="pbody">
@@ -380,12 +368,11 @@
     </article>
     <article class="proj">
       <div class="proj-top">
-        <div class="proj-id-wrap"><div class="proj-id">P2-B · WEEKS 13–14</div><div class="pname">dbt Transformation Layer</div></div>
+        <div class="proj-id-wrap"><div class="proj-id">P2-B · WEEKS 12–13</div><div class="pname">dbt Transformation Layer</div></div>
         <span class="diff d-build">Intermediate</span>
       </div>
       <div class="pbody">
         <div class="prow"><strong>What You Build</strong>A proper dbt project on top of P2-A's raw PostgreSQL data: staging models that clean raw tables, intermediate models that join and enrich, mart models as your star schema (1 fact table, 3+ dimension tables). dbt tests on every model. Generated documentation site with lineage graph. At least one incremental model and one snapshot.</div>
-        <div class="prow"><strong>Why It Matters</strong>dbt is the transformation tool of choice on modern data teams. Knowing it well — not just the basics but macros, incremental models, and snapshots — is a genuine differentiator at the junior-to-mid DE level.</div>
         <div class="prow"><strong>Stack</strong>dbt Core (free, pip install), PostgreSQL, GitHub. Run "dbt docs serve" to show the lineage graph.</div>
       </div>
       <div class="donebar">"dbt docs serve" shows a full lineage graph. Every model has at least 2 tests. The star schema makes sense to someone who didn't build it.</div>
@@ -403,26 +390,24 @@
     </article>
     <article class="proj is-new">
       <div class="proj-top">
-        <div class="proj-id-wrap"><div class="proj-id">P2-D · WEEK 16 <span class="nbadge">NEW</span></div><div class="pname">CI/CD Pipeline for Data Engineering</div></div>
+        <div class="proj-id-wrap"><div class="proj-id">P2-D · WEEK 15 <span class="nbadge">NEW</span></div><div class="pname">CI/CD Pipeline for Data Engineering</div></div>
         <span class="diff d-build">Intermediate</span>
       </div>
       <div class="pbody">
-        <div class="prow"><strong>What You Build</strong>Three GitHub Actions workflows on your Phase 2 repo: (1) On every PR — run pytest and block the merge if any test fails. (2) On push to main — validate all Airflow DAG files load without errors. (3) On merge to main — run the full dbt test suite and post a status comment to the PR.</div>
-        <div class="prow"><strong>Why It Matters</strong>CI/CD is a listed requirement on professional DE job descriptions. It also signals software engineering discipline — the market wants DEs who build like engineers, not like students. Most self-taught candidates do not have working CI/CD on any of their repos. You will.</div>
+        <div class="prow"><strong>What You Build</strong>Three GitHub Actions workflows: (1) On every PR — run pytest and block merge on failure. (2) On push to main — validate all Airflow DAG files load without errors. (3) On merge to main — run the full dbt test suite and post a status comment to the PR.</div>
         <div class="prow"><strong>Stack</strong>GitHub Actions (free tier), pytest, YAML workflow files. No external services needed beyond GitHub itself.</div>
       </div>
       <div class="donebar">Open a PR with a deliberately failing test. The CI run blocks the merge. Fix it. CI passes. The workflow is your proof of engineering practice.</div>
     </article>
   </section>
 
-  <!-- PHASE 3 -->
   <div class="sec-head"><span class="sec-label">Phase 03 · October 5 – December 27 · 12 Weeks</span><div class="sec-line"></div></div>
   <section class="phase ph3">
     <div class="phase-banner ph3">
       <div class="phase-banner-top">
         <div class="phase-num-badge">03</div>
         <div>
-          <h2>Cloud &amp; Analytics Engineering</h2>
+          <h2>Cloud & Analytics Engineering</h2>
           <p class="phase-tagline">Move your thinking from your laptop to infrastructure that scales.</p>
           <div class="tag-row">
             <span class="phase-tag">Oct 5 – Dec 27</span>
@@ -432,38 +417,37 @@
           </div>
         </div>
       </div>
-      <p class="phase-desc">Twelve weeks for the cloud phase because it covers the most ground. GCP and BigQuery are the primary cloud path — the free tier is the most generous for learning. MongoDB is added because NoSQL database ingestion appears explicitly in DE job descriptions and represents a genuinely different way of thinking about data. AWS gets a dedicated week because most companies run on it. Terraform closes out the cloud section because reproducible infrastructure is what separates a cloud user from a cloud engineer.</p>
+      <p class="phase-desc">Twelve weeks for cloud — the most ground to cover. GCP and BigQuery are the primary cloud path with the most generous free tier for learning. MongoDB is included because NoSQL ingestion appears explicitly in DE job descriptions. AWS gets dedicated time because most companies run on it. Terraform closes out the cloud section because reproducible infrastructure is what separates a cloud user from a cloud engineer. The extra weeks allow proper consolidation at each layer before moving on.</p>
     </div>
     <div class="week-grid">
       <article class="wk"><div class="wk-lbl">WEEK 17 · Oct 5–11</div><div class="wk-focus">GCP Fundamentals</div><div class="wk-desc">GCP console, IAM, Cloud Storage (GCS), Cloud SDK, service accounts. Free tier setup. Everything you build from Week 18 onwards lives here.</div></article>
       <article class="wk"><div class="wk-lbl">WEEK 18 · Oct 12–18</div><div class="wk-focus">BigQuery</div><div class="wk-desc">Columnar storage, partitioning, clustering, slot-based cost model, query optimisation, loading from GCS. Migrate your Phase 2 data here. Connect Looker Studio for free dashboards.</div></article>
-      <article class="wk"><div class="wk-lbl">WEEK 19 · Oct 19–25</div><div class="wk-focus">BigQuery Consolidation</div><div class="wk-desc">Optimise queries, explore partitioning strategies, cost control. Get fully comfortable before moving to data lake design.</div></article>
+      <article class="wk"><div class="wk-lbl">WEEK 19 · Oct 19–25</div><div class="wk-focus">BigQuery Consolidation</div><div class="wk-desc">Write 10+ analytical queries on your migrated data. Practice partitioned queries, cost analysis, and schema design. Understand why BigQuery is different from PostgreSQL.</div></article>
       <article class="wk"><div class="wk-lbl">WEEK 20 · Oct 26–Nov 1</div><div class="wk-focus">Data Lake Design</div><div class="wk-desc">Data lake vs warehouse vs lakehouse. Medallion architecture: Bronze (raw) → Silver (clean) → Gold (business-ready Parquet). Design your lake on GCS and automate transitions with Airflow.</div></article>
       <article class="wk"><div class="wk-lbl">WEEK 21 · Nov 2–8</div><div class="wk-focus">dbt + BigQuery — Analytics Eng.</div><div class="wk-desc">Connect dbt to BigQuery. Rebuild your Phase 2 star schema on BigQuery. Add dbt exposures for your Looker Studio dashboard. This is full analytics engineering.</div></article>
-      <article class="wk"><div class="wk-lbl">WEEK 22 · Nov 9–15</div><div class="wk-focus">dbt + BigQuery Consolidation</div><div class="wk-desc">Complete P3-A. Full lineage graph, tests on every model, Looker Studio connected. Terraform provisioning for all infrastructure.</div></article>
-      <article class="wk new-wk"><div class="wk-lbl">WEEK 23 · Nov 16–22</div><div class="wk-focus">MongoDB + NoSQL <span class="new-badge">NEW</span></div><div class="wk-desc">Document model vs relational. Collections, documents, indexes, aggregation pipeline. pymongo in Python. Change streams. When MongoDB, when PostgreSQL — understanding the tradeoff is the skill.</div></article>
-      <article class="wk new-wk"><div class="wk-lbl">WEEK 24 · Nov 23–29</div><div class="wk-focus">AWS Fundamentals <span class="new-badge">NEW</span></div><div class="wk-desc">S3, IAM, EC2 basics, RDS (managed MySQL + PostgreSQL on AWS), AWS CLI. Free tier throughout. Map every AWS concept to its GCP equivalent. Know both.</div></article>
-      <article class="wk"><div class="wk-lbl">WEEK 25 · Nov 30–Dec 6</div><div class="wk-focus">Terraform</div><div class="wk-desc">Infrastructure as Code: provision GCS buckets, BigQuery datasets, and an S3 bucket using Terraform. Reproducible infrastructure — the same idea as Docker but for cloud resources.</div></article>
+      <article class="wk new-wk"><div class="wk-lbl">WEEK 22 · Nov 9–15</div><div class="wk-focus">MongoDB + NoSQL <span class="new-badge">NEW</span></div><div class="wk-desc">Document model vs relational. Collections, documents, indexes, aggregation pipeline. pymongo in Python. When MongoDB, when PostgreSQL — understanding the tradeoff is the skill.</div></article>
+      <article class="wk new-wk"><div class="wk-lbl">WEEK 23 · Nov 16–22</div><div class="wk-focus">AWS Fundamentals <span class="new-badge">NEW</span></div><div class="wk-desc">S3, IAM, EC2 basics, RDS (managed MySQL + PostgreSQL on AWS), AWS CLI. Free tier throughout. Map every AWS concept to its GCP equivalent. Know both.</div></article>
+      <article class="wk"><div class="wk-lbl">WEEK 24 · Nov 23–29</div><div class="wk-focus">Terraform</div><div class="wk-desc">Infrastructure as Code: provision GCS buckets, BigQuery datasets, and an S3 bucket using Terraform. Reproducible infrastructure — the same idea as Docker but for cloud resources.</div></article>
+      <article class="wk"><div class="wk-lbl">WEEK 25 · Nov 30–Dec 6</div><div class="wk-focus">Terraform Consolidation</div><div class="wk-desc">Destroy and rebuild your entire GCP + AWS infrastructure from Terraform alone. No clicking in the console. If you can't reproduce it from code, you don't own it.</div></article>
       <article class="wk"><div class="wk-lbl">WEEK 26 · Dec 7–13</div><div class="wk-focus">Data Quality</div><div class="wk-desc">Great Expectations: define expectation suites on your data lake layers, auto-generate data docs on every Airflow run, alert when quality checks fail.</div></article>
-      <article class="wk"><div class="wk-lbl">WEEK 27 · Dec 14–20</div><div class="wk-focus">Integration Week</div><div class="wk-desc">Wire Phases 1–3 into one coherent architecture. Build P3-D: your full architecture document with diagram. Every system connected and documented.</div></article>
-      <article class="wk"><div class="wk-lbl">WEEK 28 · Dec 21–27</div><div class="wk-focus">Phase 3 Review + Rest</div><div class="wk-desc">Review and polish all Phase 3 projects. Close any gaps. Make sure every repo has a README. Prepare for the capstone phase. Rest over the holidays.</div></article>
+      <article class="wk"><div class="wk-lbl">WEEK 27 · Dec 14–20</div><div class="wk-focus">Integration Week</div><div class="wk-desc">Wire Phases 1–3 into one coherent architecture. Every piece talks to every other piece. Draw the full system diagram — data sources to dashboard.</div></article>
+      <article class="wk"><div class="wk-lbl">WEEK 28 · Dec 21–27</div><div class="wk-focus">Phase 3 Review + Buffer</div><div class="wk-desc">Revisit anything that didn't stick. Polish the architecture document. Confirm all Phase 3 projects meet their done criteria before moving to the capstone.</div></article>
     </div>
     <div class="reading-block">
       <div class="rlbl">O'Reilly Books — Phase 3</div>
       <div class="rrow"><div class="rico">📕</div><div><div class="rtitle">Designing Data-Intensive Applications</div><div class="rdetail">Martin Kleppmann · Chapters 1–4 · Dense but transformative. Changes how you think about every data system you build.</div></div></div>
-      <div class="rrow"><div class="rico">📘</div><div><div class="rtitle">Fundamentals of Data Engineering</div><div class="rdetail">Reis &amp; Housley · Chapters 11–12 · Cloud platforms and the future of the field</div></div></div>
-      <div class="rrow"><div class="rico">📗</div><div><div class="rtitle">Google BigQuery: The Definitive Guide</div><div class="rdetail">Lakshmanan &amp; Tigani · O'Reilly · Read alongside Weeks 18 and 21. The most complete BigQuery resource available.</div></div></div>
-      <div class="rrow"><div class="rico">📙</div><div><div class="rtitle">MongoDB: The Definitive Guide</div><div class="rdetail">Bradshaw, Brazil &amp; Chodorow · O'Reilly · Read Chapters 1–8 in Week 23. Covers the document model, querying, and aggregation pipeline.</div></div></div>
+      <div class="rrow"><div class="rico">📘</div><div><div class="rtitle">Fundamentals of Data Engineering</div><div class="rdetail">Reis & Housley · Chapters 11–12 · Cloud platforms and the future of the field</div></div></div>
+      <div class="rrow"><div class="rico">📗</div><div><div class="rtitle">Google BigQuery: The Definitive Guide</div><div class="rdetail">Lakshmanan & Tigani · O'Reilly · Read alongside Weeks 18 and 21. The most complete BigQuery resource available.</div></div></div>
+      <div class="rrow"><div class="rico">📙</div><div><div class="rtitle">MongoDB: The Definitive Guide</div><div class="rdetail">Bradshaw, Brazil & Chodorow · O'Reilly · Read Chapters 1–8 in Week 22.</div></div></div>
     </div>
     <div class="plbl">Phase 3 Projects</div>
     <article class="proj">
       <div class="proj-top">
-        <div class="proj-id-wrap"><div class="proj-id">P3-A · WEEKS 18 + 21–22</div><div class="pname">Cloud Analytics Platform</div></div>
+        <div class="proj-id-wrap"><div class="proj-id">P3-A · WEEKS 18 + 21</div><div class="pname">Cloud Analytics Platform</div></div>
         <span class="diff d-adv">Advanced</span>
       </div>
       <div class="pbody">
-        <div class="prow"><strong>What You Build</strong>Migrate your Phase 2 Airflow pipeline to load data into BigQuery. Build your dbt project on BigQuery with a full star schema, tests, and lineage docs. Connect a Looker Studio dashboard showing 4+ meaningful business metrics. Partition the main fact table by date. Provision the entire infrastructure with Terraform — so it can be destroyed and reproduced from scratch in under 10 minutes.</div>
-        <div class="prow"><strong>Why It Matters</strong>BigQuery + dbt + Looker Studio is the most common modern analytics stack in the market. Knowing all three together, with Terraform underpinning it, is a genuine differentiator at the junior level.</div>
+        <div class="prow"><strong>What You Build</strong>Migrate your Phase 2 Airflow pipeline to load data into BigQuery. Build your dbt project on BigQuery with a full star schema, tests, and lineage docs. Connect a Looker Studio dashboard showing 4+ meaningful business metrics. Partition the main fact table by date. Provision the entire infrastructure with Terraform.</div>
         <div class="prow"><strong>Stack</strong>GCP free tier, BigQuery, Cloud Storage, dbt (BigQuery adapter), Looker Studio (free), Terraform, GitHub Actions CI.</div>
       </div>
       <div class="donebar">Your Airflow DAG writes to BigQuery. The Looker Studio dashboard refreshes automatically. Terraform provisions the entire infrastructure from scratch. The dbt lineage graph is complete.</div>
@@ -474,19 +458,18 @@
         <span class="diff d-adv">Advanced</span>
       </div>
       <div class="pbody">
-        <div class="prow"><strong>What You Build</strong>A three-layer data lake on GCS: Bronze (raw, exactly as ingested), Silver (cleaned, typed, validated), Gold (business-ready Parquet aggregates, partitioned by date). Airflow orchestrates the promotion between layers, running Great Expectations checks at each stage. If data quality fails at Silver, the Gold layer is not updated. Data docs auto-generate on every run.</div>
+        <div class="prow"><strong>What You Build</strong>A three-layer data lake on GCS: Bronze (raw, exactly as ingested), Silver (cleaned, typed, validated), Gold (business-ready Parquet aggregates, partitioned by date). Airflow orchestrates the promotion between layers, running Great Expectations checks at each stage. If data quality fails at Silver, the Gold layer is not updated.</div>
         <div class="prow"><strong>Stack</strong>Google Cloud Storage, Python (pandas, pyarrow), Apache Airflow, Great Expectations, Parquet, Terraform for bucket provisioning.</div>
       </div>
-      <div class="donebar">Introduce a deliberately bad record at the Bronze layer. Great Expectations catches it at Silver. The Airflow DAG fails gracefully. Gold data is untouched. Data docs show the failure.</div>
+      <div class="donebar">Introduce a deliberately bad record at the Bronze layer. Great Expectations catches it at Silver. The Airflow DAG fails gracefully. Gold data is untouched.</div>
     </article>
     <article class="proj is-new">
       <div class="proj-top">
-        <div class="proj-id-wrap"><div class="proj-id">P3-C · WEEK 23 <span class="nbadge">NEW</span></div><div class="pname">MongoDB Ingestion Pipeline</div></div>
+        <div class="proj-id-wrap"><div class="proj-id">P3-C · WEEK 22 <span class="nbadge">NEW</span></div><div class="pname">MongoDB Ingestion Pipeline</div></div>
         <span class="diff d-adv">Advanced</span>
       </div>
       <div class="pbody">
-        <div class="prow"><strong>What You Build</strong>A pipeline that reads documents from a MongoDB collection using pymongo, flattens the nested JSON structure, runs your P1-A profiler on the output, and writes results to both PostgreSQL and GCS as Parquet. An Airflow DAG schedules this daily. This simulates ingesting from a MongoDB-backed application database into your data lake — a pattern you will encounter at almost any product company.</div>
-        <div class="prow"><strong>Why It Matters</strong>MongoDB is explicitly listed in DE job descriptions. DEs regularly ingest from NoSQL application databases into relational warehouses. The pattern here — document store → flatten → relational warehouse — is used at fintech, SaaS, and e-commerce companies everywhere.</div>
+        <div class="prow"><strong>What You Build</strong>A pipeline that reads documents from a MongoDB collection using pymongo, flattens the nested JSON structure, runs your P1-A profiler on the output, and writes results to both PostgreSQL and GCS as Parquet. An Airflow DAG schedules this daily.</div>
         <div class="prow"><strong>Stack</strong>MongoDB Atlas (free tier — comes with sample datasets pre-loaded), pymongo, Python, PostgreSQL, GCS, Airflow, pytest.</div>
       </div>
       <div class="donebar">Nested MongoDB documents are flattened and land correctly in both PostgreSQL and GCS Parquet. The Airflow DAG task graph succeeds. Tests pass on the flatten functions.</div>
@@ -497,22 +480,20 @@
         <span class="diff d-adv">Advanced</span>
       </div>
       <div class="pbody">
-        <div class="prow"><strong>What You Build</strong>A written architecture document (1–2 pages + diagram) that maps your entire Phase 1–3 system: data sources → ingestion → Bronze/Silver/Gold lake → BigQuery warehouse → dbt transformations → Looker Studio dashboard. Explain every design decision: why BigQuery over PostgreSQL for the warehouse, why Parquet in the lake, why dbt for transforms, why Airflow for orchestration. Include a "what I would do differently" section.</div>
-        <div class="prow"><strong>Why It Matters</strong>The ability to document a system and defend design decisions is what senior DEs do in interviews. Writing this document forces clarity on everything you've built. It also becomes part of your capstone README in Phase 4.</div>
+        <div class="prow"><strong>What You Build</strong>A written architecture document (1–2 pages + diagram) that maps your entire Phase 1–3 system: data sources → ingestion → Bronze/Silver/Gold lake → BigQuery warehouse → dbt transformations → Looker Studio dashboard. Explain every design decision. Include a "what I would do differently" section.</div>
         <div class="prow"><strong>Format</strong>Markdown file in your GitHub repo + a diagram using draw.io (free, no signup required). Link it from your GitHub profile README.</div>
       </div>
-      <div class="donebar">A non-technical person can read the document and understand what the system does and why it was built that way. A technical person can reproduce it from the document alone.</div>
+      <div class="donebar">A non-technical person can read the document and understand what the system does. A technical person can reproduce it from the document alone.</div>
     </article>
   </section>
 
-  <!-- PHASE 4 -->
   <div class="sec-head"><span class="sec-label">Phase 04 · December 28 – March 14 · 11 Weeks</span><div class="sec-line"></div></div>
   <section class="phase ph4">
     <div class="phase-banner ph4">
       <div class="phase-banner-top">
         <div class="phase-num-badge">04</div>
         <div>
-          <h2>Portfolio &amp; Career Launch</h2>
+          <h2>Portfolio & Career Launch</h2>
           <p class="phase-tagline">Turn eight months of real work into a case you can make for yourself.</p>
           <div class="tag-row">
             <span class="phase-tag">Dec 28 – Mar 14</span>
@@ -522,18 +503,20 @@
           </div>
         </div>
       </div>
-      <p class="phase-desc">Eleven weeks for the final phase. By now you have 11 projects, a working data lake, a cloud analytics platform, a MongoDB pipeline, CI/CD on every repo, and a written architecture document. Phase 4 is not a learning phase. It is a synthesis and presentation phase. The capstone takes 5 weeks because it deserves them. The remaining weeks are for system design preparation, resume work, open source contribution, and applications. You should be applying to roles in Week 39 at the latest — not after everything is "perfect".</p>
+      <p class="phase-desc">Eleven weeks for the final phase. By now you have 11 projects, a working data lake, a cloud analytics platform, a MongoDB pipeline, CI/CD on every repo, and a written architecture document. Phase 4 is not a learning phase. It is a synthesis and presentation phase. The capstone takes 5 weeks because it deserves them. You should be applying to roles by Week 39 at the latest — not after everything is "perfect".</p>
     </div>
     <div class="week-grid">
       <article class="wk"><div class="wk-lbl">WEEKS 29–33 · Dec 28–Jan 31</div><div class="wk-focus">Production Capstone</div><div class="wk-desc">Build P4-A. Your most important professional artefact. Five uninterrupted weeks. Pick a topic that genuinely excites you — that energy comes through in every conversation about it.</div></article>
-      <article class="wk"><div class="wk-lbl">WEEK 34 · Feb 1–7</div><div class="wk-focus">System Design Preparation</div><div class="wk-desc">DE system design questions: design a pipeline for 1M events/day, batch vs real-time tradeoffs, data modeling under constraints, when to use which database. Practice out loud, not silently.</div></article>
-      <article class="wk"><div class="wk-lbl">WEEK 35 · Feb 8–14</div><div class="wk-focus">Resume + LinkedIn + Portfolio Polish</div><div class="wk-desc">One-page resume, every project linked. LinkedIn updated with all GitHub links. GitHub profile README becomes your landing page. Make everything click-able and readable in under 60 seconds.</div></article>
-      <article class="wk"><div class="wk-lbl">WEEKS 36–37 · Feb 15–28</div><div class="wk-focus">System Design Practice + Open Source</div><div class="wk-desc">Continue system design practice. One merged open source PR on Airflow, dbt, Great Expectations, or any tool from this roadmap. Start applying this week.</div></article>
-      <article class="wk"><div class="wk-lbl">WEEKS 38–41 · Mar 1–14</div><div class="wk-focus">Apply + Iterate</div><div class="wk-desc">At least 10 applications: junior DE, analytics engineer, data analyst with pipeline responsibility, contract work on Upwork. Track everything. Iterate on your resume based on feedback.</div></article>
+      <article class="wk"><div class="wk-lbl">WEEK 34 · Feb 1–7</div><div class="wk-focus">System Design Preparation</div><div class="wk-desc">DE system design questions: design a pipeline for 1M events/day, batch vs real-time tradeoffs, data modeling under constraints, when to use which database. Practice out loud.</div></article>
+      <article class="wk"><div class="wk-lbl">WEEK 35 · Feb 8–14</div><div class="wk-focus">System Design — Continued</div><div class="wk-desc">Mock interview practice. Run through 5 system design scenarios. Record yourself if needed. The goal is fluency, not perfection — answers under pressure, not scripts.</div></article>
+      <article class="wk"><div class="wk-lbl">WEEK 36 · Feb 15–21</div><div class="wk-focus">Resume + LinkedIn + Portfolio Polish</div><div class="wk-desc">One-page resume, every project linked. LinkedIn updated with all GitHub links. GitHub profile README becomes your landing page. Make everything readable in under 60 seconds.</div></article>
+      <article class="wk"><div class="wk-lbl">WEEK 37 · Feb 22–28</div><div class="wk-focus">Open Source Contribution</div><div class="wk-desc">One merged open source PR on Airflow, dbt, Great Expectations, or any tool from this roadmap. Follow it through to merge — not just opened.</div></article>
+      <article class="wk"><div class="wk-lbl">WEEK 38 · Mar 1–7</div><div class="wk-focus">Community + Nigeria Network</div><div class="wk-desc">Engage with DSN (Data Science Nigeria) and Zindi communities. Attend or join an online event. Start building the network before you need it.</div></article>
+      <article class="wk"><div class="wk-lbl">WEEKS 39–41 · Mar 8–14</div><div class="wk-focus">Apply + Iterate</div><div class="wk-desc">At least 10 applications: junior DE, analytics engineer, data analyst with pipeline responsibility, contract work on Upwork. Track everything. Iterate based on feedback.</div></article>
     </div>
     <div class="reading-block">
       <div class="rlbl">Resources — Phase 4</div>
-      <div class="rrow"><div class="rico">📕</div><div><div class="rtitle">Designing Data-Intensive Applications</div><div class="rdetail">Kleppmann · Finish it in Weeks 29–30. Particularly Chapters 5–12 on replication, partitioning, and streams. Essential for system design interviews.</div></div></div>
+      <div class="rrow"><div class="rico">📕</div><div><div class="rtitle">Designing Data-Intensive Applications</div><div class="rdetail">Kleppmann · Finish it in Weeks 29–30. Chapters 5–12 on replication, partitioning, and streams. Essential for system design interviews.</div></div></div>
       <div class="rrow"><div class="rico">🌐</div><div><div class="rtitle">Data Engineering Interview Questions — GitHub</div><div class="rdetail">Search "data engineering interview questions" on GitHub. Study the system design ones hardest — they differentiate at the interview stage.</div></div></div>
       <div class="rrow"><div class="rico">🌐</div><div><div class="rtitle">Zindi Africa + Data Science Nigeria</div><div class="rdetail">zindi.africa — African ML and DE competition platform. Register early. DSN community for Nigerian tech networking, events, and opportunities.</div></div></div>
     </div>
@@ -544,28 +527,27 @@
         <span class="diff d-cap">Capstone</span>
       </div>
       <div class="pbody">
-        <div class="prow"><strong>What You Build</strong>A complete, production-grade DE system on a topic you genuinely care about. It must include: automated ingestion from at least two sources (one relational, one API or NoSQL), a cloud data warehouse (BigQuery), a medallion data lake on GCS, dbt transformations with tests and lineage docs, data quality monitoring with Great Expectations, a scheduled Airflow pipeline, CI/CD via GitHub Actions, a public Looker Studio or Metabase dashboard, and a written architecture document. Everything in Docker. Everything on GitHub.</div>
-        <div class="prow"><strong>Why This Is Your Most Important Asset</strong>Not the certificates. Not the course completions. Not the DataCamp profile. This project, done well, is what gets you hired. One strong, real, end-to-end system speaks more clearly than any list of tools on a resume. Pick a topic you will talk about enthusiastically in an interview — that energy is contagious and memorable.</div>
-        <div class="prow"><strong>Topic Ideas — Nigeria and Africa Focused</strong>Nigerian power grid outage patterns vs weather correlation · West African agricultural market prices + climate data · NPFL (Nigerian Premier League) football analytics · Public health indicator trends across sub-Saharan Africa · Lagos traffic and transit patterns · African startup funding flows by sector and country · Any topic where you have a genuine question the data can answer.</div>
+        <div class="prow"><strong>What You Build</strong>A complete, production-grade DE system on a topic you genuinely care about. Must include: automated ingestion from at least two sources, BigQuery warehouse, medallion data lake on GCS, dbt transformations with tests and lineage docs, Great Expectations quality monitoring, scheduled Airflow pipeline, CI/CD via GitHub Actions, public Looker Studio or Metabase dashboard, and a written architecture document. Everything in Docker. Everything on GitHub.</div>
+        <div class="prow"><strong>Topic Ideas — Nigeria and Africa Focused</strong>Nigerian power grid outage patterns vs weather · West African agricultural market prices + climate data · NPFL football analytics · Public health indicator trends across sub-Saharan Africa · Lagos traffic patterns · African startup funding flows · Any topic where you have a genuine question the data can answer.</div>
         <div class="prow"><strong>Full Stack</strong>Python, Airflow, dbt, BigQuery, GCS, MongoDB or MySQL as a source, Great Expectations, Docker + docker-compose, Looker Studio or Metabase, Terraform, GitHub Actions, architecture document in the repo.</div>
       </div>
-      <div class="donebar">You can walk through the entire system — source to dashboard — in a 7-minute demo without notes. The GitHub README explains the architecture to someone who has never met you. The repo is public.</div>
+      <div class="donebar">You can walk through the entire system — source to dashboard — in a 7-minute demo without notes. The GitHub README explains the architecture to someone who has never met you.</div>
     </article>
     <article class="proj">
       <div class="proj-top">
-        <div class="proj-id-wrap"><div class="proj-id">P4-B · WEEK 36</div><div class="pname">Open Source Contribution</div></div>
+        <div class="proj-id-wrap"><div class="proj-id">P4-B · WEEK 37</div><div class="pname">Open Source Contribution</div></div>
         <span class="diff d-cap">Career</span>
       </div>
       <div class="pbody">
-        <div class="prow"><strong>What You Build</strong>One merged pull request on a public DE project — Apache Airflow, dbt, Great Expectations, Airbyte, or any library used in this roadmap. A bug fix, improved documentation, a new example in the docs, or a small feature. Open a PR and follow it through to merge.</div>
-        <div class="prow"><strong>Why It Matters</strong>An open source contribution on your GitHub profile signals software engineering collaboration — reading unfamiliar codebases, following contribution guidelines, communicating with maintainers professionally. It is rare at the junior level and is genuinely noticed by hiring managers who look at GitHub profiles.</div>
+        <div class="prow"><strong>What You Build</strong>One merged pull request on a public DE project — Apache Airflow, dbt, Great Expectations, Airbyte, or any library used in this roadmap. A bug fix, improved documentation, a new example in the docs, or a small feature.</div>
+        <div class="prow"><strong>Why It Matters</strong>An open source contribution signals software engineering collaboration. It is rare at the junior level and is genuinely noticed by hiring managers who look at GitHub profiles.</div>
       </div>
       <div class="donebar">A merged PR exists on a project you didn't create. The link is on your resume, LinkedIn, and GitHub profile README.</div>
     </article>
   </section>
 
   <div class="sec-head" style="margin-top:48px"><span class="sec-label">Suggested Weekly Rhythm</span><div class="sec-line"></div></div>
-  <p style="font-size:14px;color:var(--text2);margin-bottom:20px">Protect large blocks of time. Deep work does not happen in 30-minute gaps. Two-hour minimum sessions — always.</p>
+  <p style="font-size:14px;color:var(--text2);margin-bottom:20px">Two hours of focused work each day. Protect the Saturday block — it's where the real building happens. Deep work does not happen in 30-minute gaps.</p>
   <div class="rhythm">
     <div class="day"><div class="dname">MON</div><div class="dhrs">2<span class="u">h</span></div><div class="dact">New concepts. Read + notes.</div></div>
     <div class="day"><div class="dname">TUE</div><div class="dhrs">2<span class="u">h</span></div><div class="dact">Code. Build what you read.</div></div>
@@ -605,19 +587,19 @@
 
   <div class="sec-head"><span class="sec-label">O'Reilly Reading List — All Six Books</span><div class="sec-line"></div></div>
   <div class="bgrid">
-    <div class="bcard"><div class="btag">PHASES 1–4 · CORE TEXT</div><h4>Fundamentals of Data Engineering</h4><p class="bauthor">Joe Reis &amp; Matt Housley · O'Reilly 2022</p><p class="bnote">Read chapter by chapter across phases. Your DE bible. Reread key chapters in Phase 4 — they land differently after months of practice.</p></div>
+    <div class="bcard"><div class="btag">PHASES 1–4 · CORE TEXT</div><h4>Fundamentals of Data Engineering</h4><p class="bauthor">Joe Reis & Matt Housley · O'Reilly 2022</p><p class="bnote">Read chapter by chapter across phases. Your DE bible. Reread key chapters in Phase 4 — they land differently after months of practice.</p></div>
     <div class="bcard"><div class="btag">PHASE 1 · PYTHON</div><h4>Python for Data Analysis — 3rd Ed.</h4><p class="bauthor">Wes McKinney · O'Reilly 2023</p><p class="bnote">The definitive pandas reference. Type every example yourself — don't just read it. Come back to it whenever you hit a pandas question.</p></div>
     <div class="bcard"><div class="btag">PHASE 1 · SQL</div><h4>Learning SQL — 3rd Edition</h4><p class="bauthor">Alan Beaulieu · O'Reilly 2020</p><p class="bnote">The clearest SQL progression book available. Covers MySQL and PostgreSQL. Read it cover to cover in Weeks 4–5. Everything in it is applicable.</p></div>
     <div class="bcard"><div class="btag">PHASE 2 · PIPELINES</div><h4>Data Pipelines Pocket Reference</h4><p class="bauthor">James Densmore · O'Reilly 2021</p><p class="bnote">Read cover to cover in Week 8. Short, dense, zero filler. Everything in it maps directly to something you will build in Phase 2.</p></div>
     <div class="bcard"><div class="btag">PHASES 3–4 · SYSTEMS</div><h4>Designing Data-Intensive Applications</h4><p class="bauthor">Martin Kleppmann · O'Reilly 2017</p><p class="bnote">Chapters 1–4 in Phase 3, finish it in Phase 4. Dense but perspective-changing. The book that makes you think like a systems engineer.</p></div>
-    <div class="bcard"><div class="btag">PHASE 3 · BIGQUERY</div><h4>Google BigQuery: The Definitive Guide</h4><p class="bauthor">Lakshmanan &amp; Tigani · O'Reilly</p><p class="bnote">Read alongside Weeks 18 and 21. The most complete BigQuery resource available anywhere. Covers architecture, cost, performance, and dbt integration.</p></div>
-    <div class="bcard"><div class="btag">PHASE 3 · NOSQL</div><h4>MongoDB: The Definitive Guide</h4><p class="bauthor">Bradshaw, Brazil &amp; Chodorow · O'Reilly</p><p class="bnote">Chapters 1–8 in Week 23. Covers the document model, CRUD, indexes, and the aggregation pipeline. Everything you need for P3-C.</p></div>
+    <div class="bcard"><div class="btag">PHASE 3 · BIGQUERY</div><h4>Google BigQuery: The Definitive Guide</h4><p class="bauthor">Lakshmanan & Tigani · O'Reilly</p><p class="bnote">Read alongside Weeks 18 and 21. The most complete BigQuery resource available anywhere.</p></div>
+    <div class="bcard"><div class="btag">PHASE 3 · NOSQL</div><h4>MongoDB: The Definitive Guide</h4><p class="bauthor">Bradshaw, Brazil & Chodorow · O'Reilly</p><p class="bnote">Chapters 1–8 in Week 22. Covers the document model, CRUD, indexes, and the aggregation pipeline. Everything you need for P3-C.</p></div>
   </div>
 
   <div class="sec-head"><span class="sec-label">Nine-Month Summary</span><div class="sec-line"></div></div>
   <div class="sum-table-wrap">
     <table class="sum-table">
-      <thead><tr><th>Phase</th><th>Dates</th><th>Weeks</th><th>Focus</th><th>Projects</th><th>Key Notes</th></tr></thead>
+      <thead><tr><th>Phase</th><th>Dates</th><th>Weeks</th><th>Focus</th><th>Projects</th><th>Notes</th></tr></thead>
       <tbody>
         <tr>
           <td><span class="ph-tag pt1">01 Foundations</span></td>
@@ -625,7 +607,7 @@
           <td style="font-family:'Roboto Mono',monospace;font-size:11px">1–7</td>
           <td>Python · SQL · MySQL · PostgreSQL · Data Formats · pytest · Git</td>
           <td>P1-A: Data Profiler CLI<br/>P1-B: SQL Analytics Engine</td>
-          <td>7 weeks for depth on fundamentals</td>
+          <td>7 weeks — extra time for Python + SQL consolidation</td>
         </tr>
         <tr>
           <td><span class="ph-tag pt2">02 Pipelines</span></td>
@@ -633,7 +615,7 @@
           <td style="font-family:'Roboto Mono',monospace;font-size:11px">8–16</td>
           <td>Airflow (deep) · dbt (deep) · Data Modeling · Docker · CI/CD</td>
           <td>P2-A: Multi-Source Pipeline<br/>P2-B: dbt Layer<br/>P2-C: Containerised Stack<br/>P2-D: CI/CD</td>
-          <td>9 weeks with consolidation built in</td>
+          <td>9 weeks — consolidation weeks for Airflow + dbt</td>
         </tr>
         <tr>
           <td><span class="ph-tag pt3">03 Cloud</span></td>
@@ -641,7 +623,7 @@
           <td style="font-family:'Roboto Mono',monospace;font-size:11px">17–28</td>
           <td>GCP · BigQuery · Data Lakes · dbt+BQ · MongoDB · AWS · Terraform · Data Quality</td>
           <td>P3-A: Cloud Analytics Platform<br/>P3-B: Medallion Lake + Quality<br/>P3-C: MongoDB Pipeline<br/>P3-D: Architecture Document</td>
-          <td>12 weeks including review and integration</td>
+          <td>12 weeks — buffer for BigQuery, Terraform, integration</td>
         </tr>
         <tr>
           <td><span class="ph-tag pt4">04 Career</span></td>
@@ -649,7 +631,7 @@
           <td style="font-family:'Roboto Mono',monospace;font-size:11px">29–41</td>
           <td>Capstone Build · System Design · Resume · Open Source · Applications</td>
           <td>P4-A: Production Capstone<br/>P4-B: Open Source Contribution</td>
-          <td>5 weeks capstone + 6 weeks career prep</td>
+          <td>5 weeks capstone + 6 weeks career prep. Apply by Week 39.</td>
         </tr>
       </tbody>
     </table>
@@ -684,10 +666,11 @@
       <div class="g-dot" style="background:var(--green)"></div>
     </div>
     <p class="fq">You don't need to be ready to start.<br/>You just need to start to become ready.</p>
-    <p class="fs">Updated June 2026 · Four-Phase Roadmap · Jun 14, 2026 – Mar 14, 2027 · 12 Projects · O'Reilly Powered · Career-Ready by March 2027</p>
+    <p class="fs">Updated June 2026 · Four-Phase Roadmap · Jun 14, 2026 – Mar 14, 2027 · 41 Weeks · 12 Projects · O'Reilly Powered · Career-Ready by March 2027</p>
   </footer>
 
 </main>
+
 <script>
   const storage = {
     get: (key) => { try { return localStorage.getItem(key); } catch (e) { return null; } },
