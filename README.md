@@ -1,21 +1,20 @@
 # Data Engineering Roadmap
-
-Personal learning roadmap for transitioning into a production-ready Data Engineering role by October 2026, indexing heavily on automated pipelines, deep systems, and structured logic.
+Personal learning roadmap for transitioning into a production-ready Data Engineering role by March 2027, indexing heavily on automated pipelines, deep systems, and structured logic.
 
 **Live site → [champraise.github.io/de-roadmap](https://champraise.github.io/de-roadmap/)**
 
 ## Schedule
 
-| Phase | Dates | Focus |
-|---|---|---|
-| 01 — Foundations | Jun 15 – Jul 12 | Python · SQL · pytest |
-| 02 — Pipeline Architecture | Jul 13 – Aug 9 | Airflow · dbt · Docker · CI/CD |
-| 03 — Cloud, Infra & NoSQL | Aug 10 – Sep 13 | GCP · BigQuery · Terraform · MongoDB |
-| 04 — Portfolio & Career | Sep 14 – Oct 11 | Capstone Build · Open Source · Apply |
+| Phase | Dates | Weeks | Focus |
+|---|---|---|---|
+| 01 — Foundations | Jun 14 – Aug 1 | 1–7 | Python · SQL · MySQL · PostgreSQL · pytest · Git |
+| 02 — Pipeline Engineering | Aug 2 – Oct 4 | 8–16 | Airflow · dbt · Docker · CI/CD · Data Modeling |
+| 03 — Cloud, Infra & NoSQL | Oct 5 – Dec 27 | 17–28 | GCP · BigQuery · Terraform · MongoDB · AWS · Data Quality |
+| 04 — Portfolio & Career | Dec 28 – Mar 14 | 29–41 | Capstone Build · System Design · Open Source · Apply |
 
-17 weeks · ~380 hours · 11 milestone projects
+41 weeks · ~575 hours · 12 milestone projects
 
 ## Stack & Strategy
 
 * **Frontend:** Plain HTML/CSS — no build step. Edit `index.html` and push. GitHub Pages deploys automatically.
-* **Execution Strategy:** Leverages offline access to O'Reilly library archives and DataCamp to deliberately bridge the gap between learning syntax and deploying production-grade data infrastructure.
+* **Execution Strategy:** Leverages offline access to O'Reilly library archives to deliberately bridge the gap between learning syntax and deploying production-grade data infrastructure. Paced at ~14 hours/week (2 hours/day, with a longer Saturday session).
