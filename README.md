@@ -1,5 +1,6 @@
 # Data Engineering Roadmap
-Personal learning roadmap for transitioning into a production-ready Data Engineering role by March 2027, indexing heavily on automated pipelines, deep systems, and structured logic.
+
+Personal learning roadmap for transitioning into a production-ready Data Engineering role by May 2027, indexing heavily on automated pipelines, deep systems, and structured logic.
 
 **Live site → [champraise.github.io/de-roadmap](https://champraise.github.io/de-roadmap/)**
 
@@ -7,12 +8,12 @@ Personal learning roadmap for transitioning into a production-ready Data Enginee
 
 | Phase | Dates | Weeks | Focus |
 |---|---|---|---|
-| 01 — Foundations | Jun 14 – Aug 1 | 1–7 | Python · SQL · MySQL · PostgreSQL · pytest · Git |
-| 02 — Pipeline Engineering | Aug 2 – Oct 4 | 8–16 | Airflow · dbt · Docker · CI/CD · Data Modeling |
-| 03 — Cloud, Infra & NoSQL | Oct 5 – Dec 27 | 17–28 | GCP · BigQuery · Terraform · MongoDB · AWS · Data Quality |
-| 04 — Portfolio & Career | Dec 28 – Mar 14 | 29–41 | Capstone Build · System Design · Open Source · Apply |
+| 01 — Foundations | Jul 20 – Sep 6 | 1–7 | Python · SQL · MySQL · PostgreSQL · pytest · Git |
+| 02 — Pipeline Engineering | Sep 7 – Nov 8 | 8–16 | Airflow · dbt · Docker · CI/CD · Data Modeling |
+| 03 — Cloud, Infra & NoSQL | Nov 9 – Jan 31 | 17–28 | GCP · BigQuery · Terraform · MongoDB · AWS · Data Quality |
+| 04 — Portfolio & Career | Feb 1 – May 2 | 29–41 | Capstone Build · System Design · Open Source · Apply |
 
-41 weeks · ~575 hours · 12 milestone projects
+41 weeks · ~574 hours · 12 milestone projects
 
 ## Stack & Strategy
 
